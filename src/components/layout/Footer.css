@@ -1,0 +1,134 @@
+/* ============================================
+   FOOTER STYLES
+   ============================================ */
+
+.footer {
+  background-color: var(--color-dark-surface);
+  border-top: 1px solid rgba(var(--color-white-rgb), 0.06);
+  margin-top: auto;
+}
+
+.footer__inner {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: var(--space-12);
+  padding: var(--space-16) var(--space-6);
+}
+
+/* ---- Brand ---- */
+.footer__logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+  text-decoration: none;
+  margin-bottom: var(--space-4);
+}
+
+.footer__logo:hover {
+  color: var(--color-white);
+}
+
+.footer__logo-accent {
+  color: var(--color-secondary);
+}
+
+.footer__tagline {
+  font-size: var(--font-size-sm);
+  color: var(--color-muted);
+  line-height: var(--line-height-relaxed);
+  max-width: 320px;
+}
+
+/* ---- Headings ---- */
+.footer__heading {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-white);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wider);
+  margin-bottom: var(--space-6);
+}
+
+/* ---- Links ---- */
+.footer__nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.footer__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-sm);
+  color: var(--color-muted);
+  text-decoration: none;
+  transition: color var(--transition-fast), gap var(--transition-fast);
+}
+
+.footer__link:hover {
+  color: var(--color-secondary);
+  gap: var(--space-3);
+}
+
+/* ---- Contact ---- */
+.footer__contact-items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.footer__contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--font-size-sm);
+  color: var(--color-muted);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.footer__contact-item:hover {
+  color: var(--color-secondary);
+}
+
+/* ---- Bottom Bar ---- */
+.footer__bottom {
+  border-top: 1px solid rgba(var(--color-white-rgb), 0.06);
+  padding: var(--space-6) 0;
+}
+
+.footer__bottom-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer__copyright {
+  font-size: var(--font-size-xs);
+  color: var(--color-muted);
+}
+
+.footer__blessing {
+  font-size: var(--font-size-xs);
+  color: var(--color-muted);
+  font-style: italic;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .footer__inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    padding: var(--space-12) var(--space-6);
+  }
+
+  .footer__bottom-inner {
+    flex-direction: column;
+    gap: var(--space-2);
+    text-align: center;
+  }
+}
