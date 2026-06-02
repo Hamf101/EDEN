@@ -101,7 +101,7 @@ export default function CreditConsulting() {
               Our proven strategies have helped clients increase their scores by
               100+ points, unlocking funding they never thought possible.
             </p>
-            <Button variant="primary" size="lg" href="/contact">
+            <Button variant="primary" size="lg" href="/onboarding/credit">
               Get Started
             </Button>
           </div>
