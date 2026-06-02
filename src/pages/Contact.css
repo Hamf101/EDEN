@@ -4,7 +4,7 @@
 
 /* ---- Hero ---- */
 .contact-hero {
-  padding: calc(var(--nav-height) + var(--space-20)) 0 var(--space-16);
+  padding: calc(var(--nav-height) + var(--space-20)) var(--space-6) var(--space-16);
   text-align: center;
   background: radial-gradient(
     ellipse at 50% 50%,
@@ -15,6 +15,7 @@
 
 .contact-hero__inner {
   max-width: 800px;
+  margin: 0 auto;
 }
 
 .contact-hero__title {

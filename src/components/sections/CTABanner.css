@@ -43,6 +43,14 @@
 }
 
 @media (max-width: 768px) {
+  .cta-banner {
+    padding: var(--space-6) 0;
+  }
+
+  .cta-banner__inner {
+    padding: var(--space-10) var(--space-4);
+  }
+
   .cta-banner__title {
     font-size: var(--font-size-3xl);
   }

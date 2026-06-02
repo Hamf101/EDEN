@@ -38,6 +38,11 @@
           drop-shadow(0 0 36px rgba(201, 168, 76, 0.4));
 }
 
+/* Prevent horizontal overflow from large portrait image */
+.about-mission__image-col {
+  overflow: hidden;
+}
+
 .about-mission__content {
   display: flex;
   flex-direction: column;
@@ -74,12 +79,22 @@
   }
 
   .about-mission__portrait {
-    min-height: 520px;
+    min-height: 420px;
+  }
+
+  .about-mission__portrait img {
+    width: 100%;
+    max-width: 420px;
+    transform: translate(0, calc(var(--space-8) * -1));
   }
 }
 
 @media (max-width: 480px) {
   .about-mission__portrait {
-    min-height: 420px;
+    min-height: 340px;
+  }
+
+  .about-mission__portrait img {
+    max-width: 320px;
   }
 }

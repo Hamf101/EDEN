@@ -10,7 +10,7 @@
   height: 100%;
   pointer-events: none;
   z-index: var(--z-vine);
-  overflow: visible;
+  overflow: hidden;
 }
 
 /* ---- SVG Vines ---- */
@@ -19,7 +19,7 @@
   top: 0;
   height: 100%;
   width: 112px;
-  overflow: visible;
+  overflow: hidden;
   transition: opacity 0.3s ease;
 }
 
@@ -28,7 +28,7 @@
 }
 
 .vine-svg--right {
-  right: -8px;
+  right: 0;
   transform: scaleX(-1);
 }
 
@@ -59,8 +59,8 @@
 /* ---- Responsive: Hide on small screens ---- */
 @media (max-width: 768px) {
   .vine-svg {
-    width: 64px;
-    opacity: 0.5;
+    width: 40px;
+    opacity: 0.35;
   }
 
   .vine-particles {

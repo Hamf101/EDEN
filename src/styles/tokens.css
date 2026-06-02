@@ -148,3 +148,16 @@
   --z-modal: 400;
   --z-toast: 500;
 }
+
+/* ---- Responsive Token Overrides ---- */
+@media (max-width: 768px) {
+  :root {
+    --section-padding: var(--space-16) var(--space-4);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --section-padding: var(--space-12) var(--space-3);
+  }
+}

@@ -173,4 +173,14 @@ input, textarea, select {
   h2 {
     font-size: var(--font-size-2xl);
   }
+
+  .container {
+    padding: 0 var(--space-4);
+  }
+}
+
+/* ---- Overflow containment for main content ---- */
+main {
+  overflow-x: hidden;
+  width: 100%;
 }

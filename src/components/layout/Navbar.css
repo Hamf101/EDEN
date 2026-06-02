@@ -165,4 +165,19 @@
     align-items: center;
     justify-content: center;
   }
+
+  .navbar__logo {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar__logo {
+    font-size: var(--font-size-lg);
+    gap: var(--space-2);
+  }
+
+  .navbar__logo-img {
+    height: 48px;
+  }
 }

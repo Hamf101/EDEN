@@ -4,7 +4,7 @@
 
 /* ---- Hero ---- */
 .testimonials-hero {
-  padding: calc(var(--nav-height) + var(--space-20)) 0 var(--space-20);
+  padding: calc(var(--nav-height) + var(--space-20)) var(--space-6) var(--space-20);
   text-align: center;
   background: radial-gradient(
     ellipse at 50% 60%,
@@ -15,6 +15,7 @@
 
 .testimonials-hero__inner {
   max-width: 700px;
+  margin: 0 auto;
 }
 
 .testimonials-hero__quote-mark {
@@ -107,4 +108,25 @@
   color: var(--color-text);
   text-align: center;
   margin-bottom: var(--space-8);
+}
+
+@media (max-width: 768px) {
+  .testimonials-hero {
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
+
+  .testimonials-hero__quote-mark {
+    font-size: 4rem;
+  }
+
+  .testimonials-hero__featured-quote {
+    font-size: var(--font-size-xl);
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonials-hero__quote-mark {
+    font-size: 3rem;
+  }
 }
