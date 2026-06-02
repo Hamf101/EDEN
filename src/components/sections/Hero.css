@@ -1,5 +1,5 @@
 /* ============================================
-   HERO SECTION STYLES — LIGHT THEME
+   HERO SECTION STYLES — Garden of Eden Dark
    ============================================ */
 
 .hero {
@@ -7,23 +7,53 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(
-    160deg,
-    var(--color-bg) 0%,
-    var(--color-bg-alt) 50%,
-    rgba(var(--color-primary-rgb), 0.03) 100%
-  );
+  background-color: var(--color-bg);
   overflow: hidden;
+  isolation: isolate;
+}
+
+/* Sharpened, low-visibility image layer */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../../assets/eden_hero_trees_sharp.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.56;
+  filter: contrast(1.24) saturate(1.08) brightness(1.04);
+  transform: scale(1.01);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Dark overlay for readability plus subtle radial glow */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(var(--color-primary-rgb), 0.06) 0%,
+      transparent 70%
+    ),
+    rgba(10, 10, 10, 0.66);
+  z-index: 1;
+  pointer-events: none;
 }
 
 /* ---- Inner Layout ---- */
 .hero__inner {
   position: relative;
-  z-index: var(--z-base);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-12);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  text-align: center;
+  min-height: 100vh;
   padding-top: calc(var(--nav-height) + var(--space-16));
   padding-bottom: var(--space-16);
 }
@@ -32,22 +62,26 @@
 .hero__content {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: var(--space-5);
+  max-width: 800px;
 }
 
 .hero__eyebrow {
+  font-family: var(--font-family-heading);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
-  color: var(--color-primary);
+  color: var(--color-gold);
   text-transform: uppercase;
-  letter-spacing: var(--letter-spacing-wider);
+  letter-spacing: var(--letter-spacing-widest);
 }
 
 .hero__title {
+  font-family: var(--font-family-heading);
   font-size: var(--font-size-6xl);
   font-weight: var(--font-weight-extrabold);
   line-height: var(--line-height-tight);
-  letter-spacing: var(--letter-spacing-tight);
+  letter-spacing: var(--letter-spacing-wide);
   color: var(--color-text);
 }
 
@@ -62,25 +96,15 @@
   display: flex;
   gap: var(--space-4);
   flex-wrap: wrap;
+  justify-content: center;
   margin-top: var(--space-2);
-}
-
-/* ---- Secondary button override for light bg ---- */
-.hero__actions .btn--secondary {
-  color: var(--color-text);
-  border-color: var(--color-border);
-}
-
-.hero__actions .btn--secondary:hover {
-  border-color: var(--color-primary);
-  color: var(--color-primary);
-  background: rgba(var(--color-primary-rgb), 0.05);
 }
 
 /* ---- Proof Points ---- */
 .hero__proof {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: var(--space-6);
   margin-top: var(--space-4);
   padding-top: var(--space-6);
@@ -94,9 +118,10 @@
 }
 
 .hero__proof-value {
+  font-family: var(--font-family-heading);
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
-  color: var(--color-primary);
+  color: var(--color-gold);
 }
 
 .hero__proof-label {
@@ -112,40 +137,11 @@
   background: var(--color-border);
 }
 
-/* ---- Image Area ---- */
-.hero__image-area {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.hero__image-frame {
-  position: relative;
-  width: 100%;
-  max-width: 480px;
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  border: 1px solid var(--color-border);
-  box-shadow: 0 20px 60px rgba(var(--color-primary-rgb), 0.1),
-              0 4px 20px rgba(0, 0, 0, 0.06);
-}
-
-.hero__image-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
 /* ---- Responsive ---- */
 @media (max-width: 1024px) {
   .hero__inner {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .hero__content {
-    align-items: center;
+    min-height: auto;
+    padding-bottom: var(--space-12);
   }
 
   .hero__subtitle {
@@ -154,14 +150,6 @@
 
   .hero__title {
     font-size: var(--font-size-5xl);
-  }
-
-  .hero__image-area {
-    order: -1;
-  }
-
-  .hero__image-frame {
-    max-width: 360px;
   }
 
   .hero__proof {
@@ -195,6 +183,11 @@
     min-height: auto;
     padding-top: var(--space-8);
     padding-bottom: var(--space-8);
+  }
+
+  .hero__inner {
+    padding-top: calc(var(--nav-height) + var(--space-8));
+    padding-bottom: 0;
   }
 
   .hero__title {

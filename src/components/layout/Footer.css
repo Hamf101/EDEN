@@ -1,55 +1,97 @@
 /* ============================================
-   FOOTER STYLES
+   FOOTER STYLES — Garden of Eden
+   4-Column Layout: Brand | Services | Company | Newsletter
    ============================================ */
 
 .footer {
   background-color: var(--color-dark-surface);
   border-top: none;
   margin-top: 0;
+  position: relative;
 }
 
+/* ---- Vine Separator ---- */
+.footer__vine-separator {
+  width: 100%;
+  height: 40px;
+  overflow: hidden;
+  opacity: 0.8;
+}
+
+.footer__vine-separator svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ---- Grid Layout ---- */
 .footer__inner {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
-  gap: var(--space-12);
-  padding: var(--space-16) var(--space-10) var(--space-12);
+  grid-template-columns: 1.8fr 1fr 1fr 1.4fr;
+  gap: var(--space-10);
+  padding: var(--space-12) var(--space-10) var(--space-10);
 }
 
-/* ---- Brand ---- */
+/* ---- Brand Column ---- */
 .footer__logo {
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
+  font-family: var(--font-family-accent);
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
-  color: var(--color-white);
+  color: var(--color-text);
   text-decoration: none;
   margin-bottom: var(--space-4);
 }
 
 .footer__logo:hover {
-  color: var(--color-white);
+  color: var(--color-text);
 }
 
 .footer__logo-accent {
-  color: var(--color-secondary);
+  color: var(--color-gold);
 }
 
 .footer__tagline {
   font-size: var(--font-size-sm);
-  color: var(--color-muted);
+  color: var(--color-text-muted);
   line-height: var(--line-height-relaxed);
-  max-width: 320px;
+  max-width: 300px;
+  margin-bottom: var(--space-5);
 }
 
-/* ---- Headings ---- */
+.footer__social {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.footer__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast), border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.footer__social-link:hover {
+  color: var(--color-gold);
+  border-color: var(--color-gold);
+  background-color: rgba(var(--color-primary-rgb), 0.08);
+}
+
+/* ---- Column Headings ---- */
 .footer__heading {
+  font-family: var(--font-family-heading);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
-  color: var(--color-white);
+  color: var(--color-text);
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing-wider);
-  margin-bottom: var(--space-6);
+  margin-bottom: var(--space-5);
 }
 
 /* ---- Links ---- */
@@ -64,41 +106,71 @@
   align-items: center;
   gap: var(--space-2);
   font-size: var(--font-size-sm);
-  color: var(--color-muted);
+  color: var(--color-text-muted);
   text-decoration: none;
   transition: color var(--transition-fast), gap var(--transition-fast);
 }
 
 .footer__link:hover {
-  color: var(--color-secondary);
+  color: var(--color-gold);
   gap: var(--space-3);
 }
 
-/* ---- Contact ---- */
-.footer__contact-items {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
-}
-
-.footer__contact-item {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-3);
+/* ---- Newsletter ---- */
+.footer__newsletter-text {
   font-size: var(--font-size-sm);
-  color: var(--color-muted);
-  text-decoration: none;
-  transition: color var(--transition-fast);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--space-4);
 }
 
-.footer__contact-item:hover {
-  color: var(--color-secondary);
+.footer__newsletter-form {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.footer__newsletter-input {
+  flex: 1;
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-dark-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  font-size: var(--font-size-sm);
+  transition: border-color var(--transition-fast);
+}
+
+.footer__newsletter-input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.footer__newsletter-input:focus {
+  border-color: var(--color-gold);
+  outline: none;
+}
+
+.footer__newsletter-btn {
+  padding: var(--space-2) var(--space-4);
+  background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-light) 100%);
+  color: var(--color-dark);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  white-space: nowrap;
+}
+
+.footer__newsletter-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-gold-glow-sm);
 }
 
 /* ---- Bottom Bar ---- */
 .footer__bottom {
-  border-top: 1px solid rgba(var(--color-white-rgb), 0.06);
-  padding: var(--space-6) var(--space-10);
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-5) var(--space-10);
 }
 
 .footer__bottom-inner {
@@ -109,21 +181,29 @@
 
 .footer__copyright {
   font-size: var(--font-size-xs);
-  color: var(--color-muted);
+  color: var(--color-text-muted);
 }
 
 .footer__blessing {
   font-size: var(--font-size-xs);
-  color: var(--color-muted);
+  color: var(--color-text-muted);
   font-style: italic;
 }
 
 /* ---- Responsive ---- */
+@media (max-width: 1024px) {
+  .footer__inner {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+    padding: var(--space-10) var(--space-6);
+  }
+}
+
 @media (max-width: 768px) {
   .footer__inner {
     grid-template-columns: 1fr;
     gap: var(--space-8);
-    padding: var(--space-12) var(--space-6);
+    padding: var(--space-10) var(--space-6);
   }
 
   .footer__bottom-inner {

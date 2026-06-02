@@ -1,7 +1,7 @@
 import SectionWrapper from '../components/ui/SectionWrapper';
 import Button from '../components/ui/Button';
 import { Banknote, Clock, FileCheck, ShieldCheck, BadgeDollarSign, CreditCard, Building2 } from 'lucide-react';
-import flyerImg from '../assets/flyer-business-loan.jpg';
+import founderImg from '../assets/founder2_transparent.png';
 import './BusinessLoans.css';
 
 /**
@@ -24,9 +24,6 @@ export default function BusinessLoans() {
               Competitive rates, flexible terms, and same-day approval.
               Get the funding you need without the hassle.
             </p>
-            <Button variant="primary" size="lg" href="/contact">
-              Apply Now
-            </Button>
           </div>
 
           <div className="loans-hero__stats">
@@ -123,14 +120,14 @@ export default function BusinessLoans() {
               </li>
             </ul>
 
-            <Button variant="primary" size="lg" href="/contact">
+            <Button variant="primary" size="lg" href="/onboarding/business">
               Apply Now
             </Button>
           </div>
 
           <div className="page-two-col__media">
             <img
-              src={flyerImg}
+              src={founderImg}
               alt="Eden Prosperity — Business Loans"
               className="page-two-col__image"
             />

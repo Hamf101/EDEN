@@ -1,34 +1,21 @@
 /* ============================================
-   CREDIT REPAIR PAGE — UNIQUE STYLES
+   CREDIT REPAIR PAGE — Garden of Eden
    ============================================ */
 
-/* ---- Hero: Split with score visual ---- */
+/* ---- Hero ---- */
 .credit-hero {
-  position: relative;
-  padding-top: calc(var(--nav-height) + var(--space-16));
-  padding-bottom: var(--space-16);
-  background: var(--color-bg);
-  overflow: hidden;
-}
-
-/* Subtle green tint at top */
-.credit-hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 50%;
-  height: 100%;
-  background: rgba(16, 185, 129, 0.03);
-  pointer-events: none;
+  padding: calc(var(--nav-height) + var(--space-20)) 0 var(--space-16);
+  background: radial-gradient(
+    ellipse at 30% 50%,
+    rgba(var(--color-primary-rgb), 0.06) 0%,
+    var(--color-bg) 60%
+  );
 }
 
 .credit-hero__inner {
-  position: relative;
-  z-index: var(--z-base);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-16);
+  gap: var(--space-12);
   align-items: center;
 }
 
@@ -39,18 +26,16 @@
 }
 
 .credit-hero__eyebrow {
+  font-family: var(--font-family-heading);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
-  color: var(--color-success);
+  color: var(--color-gold);
   text-transform: uppercase;
-  letter-spacing: var(--letter-spacing-wider);
+  letter-spacing: var(--letter-spacing-widest);
 }
 
 .credit-hero__title {
-  font-size: var(--font-size-5xl);
-  font-weight: var(--font-weight-extrabold);
-  color: var(--color-text);
-  line-height: var(--line-height-tight);
+  font-family: var(--font-family-heading);
 }
 
 .credit-hero__subtitle {
@@ -60,7 +45,7 @@
   max-width: 520px;
 }
 
-/* ---- Score Ring Visual ---- */
+/* ---- Score Ring ---- */
 .credit-hero__score-area {
   display: flex;
   justify-content: center;
@@ -68,113 +53,95 @@
 }
 
 .credit-hero__score-ring {
-  position: relative;
-  width: 280px;
-  height: 280px;
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
+  border: 3px solid var(--color-gold);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: var(--space-1);
-  background: var(--color-bg-alt);
-  border: 6px solid rgba(16, 185, 129, 0.15);
-  box-shadow: 0 0 0 20px rgba(16, 185, 129, 0.04),
-              0 20px 60px rgba(0, 0, 0, 0.06);
-}
-
-/* Animated arc — decorative progress indicator */
-.credit-hero__score-ring::before {
-  content: '';
-  position: absolute;
-  inset: -6px;
-  border-radius: 50%;
-  border: 6px solid transparent;
-  border-top-color: var(--color-success);
-  border-right-color: var(--color-success);
-  transform: rotate(45deg);
+  gap: var(--space-2);
+  box-shadow: 0 0 40px rgba(var(--color-primary-rgb), 0.15),
+              inset 0 0 30px rgba(var(--color-primary-rgb), 0.05);
 }
 
 .credit-hero__score-number {
+  font-family: var(--font-family-heading);
   font-size: var(--font-size-6xl);
-  font-weight: var(--font-weight-black);
-  color: var(--color-success);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-gold);
   line-height: 1;
 }
 
 .credit-hero__score-plus {
   font-size: var(--font-size-3xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-success);
+  color: var(--color-gold-light);
 }
 
 .credit-hero__score-label {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   color: var(--color-text-muted);
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing-wide);
   text-align: center;
-  max-width: 160px;
 }
 
-/* ---- Process: Horizontal connected steps ---- */
+/* ---- Process Steps ---- */
 .credit-steps {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: var(--space-6);
-  position: relative;
-}
-
-/* Connector line behind steps */
-.credit-steps::before {
-  content: '';
-  position: absolute;
-  top: 36px;
-  left: 60px;
-  right: 60px;
-  height: 2px;
-  background: var(--color-border);
 }
 
 .credit-step {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   text-align: center;
-  gap: var(--space-4);
+  padding: var(--space-6);
+  background: var(--color-dark-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
   position: relative;
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.credit-step:hover {
+  border-color: rgba(var(--color-primary-rgb), 0.3);
+  box-shadow: var(--shadow-gold-glow-sm);
 }
 
 .credit-step__number {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: var(--color-bg);
-  border: 2px solid var(--color-success);
-  color: var(--color-success);
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-bold);
-  z-index: var(--z-base);
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-4);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-extrabold);
+  color: rgba(var(--color-primary-rgb), 0.12);
+  line-height: 1;
 }
 
 .credit-step__icon {
-  color: var(--color-success);
-  margin-bottom: var(--space-1);
+  color: var(--color-gold);
+  margin-bottom: var(--space-4);
 }
 
 .credit-step__title {
+  font-family: var(--font-family-heading);
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text);
+  margin-bottom: var(--space-2);
 }
 
 .credit-step__text {
   font-size: var(--font-size-sm);
   color: var(--color-text-secondary);
   line-height: var(--line-height-relaxed);
+}
+
+/* ---- Overview ---- */
+.credit-overview {
+  max-width: 760px;
+  margin: 0 auto;
 }
 
 /* ---- Responsive ---- */
@@ -188,32 +155,13 @@
     align-items: center;
   }
 
-  .credit-hero__score-ring {
-    width: 220px;
-    height: 220px;
-  }
-
-  .credit-hero__score-number {
-    font-size: var(--font-size-5xl);
-  }
-
   .credit-steps {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .credit-steps::before {
-    display: none;
   }
 }
 
 @media (max-width: 768px) {
-  .credit-hero__title {
-    font-size: var(--font-size-3xl);
-  }
-
   .credit-steps {
     grid-template-columns: 1fr;
-    max-width: 360px;
-    margin: 0 auto;
   }
 }

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import logoImg from '../../assets/logo.png';
 import './Navbar.css';
 
 /**
@@ -42,8 +43,11 @@ export default function Navbar() {
       <div className="navbar__inner container">
         {/* Logo */}
         <Link to="/" className="navbar__logo" onClick={closeMobile}>
-          <span className="navbar__logo-text">Eden</span>
-          <span className="navbar__logo-accent">Prosperity</span>
+          <img src={logoImg} alt="Eden Prosperity Logo" className="navbar__logo-img" />
+          <div className="navbar__logo-text-wrapper">
+            <span className="navbar__logo-text">Eden</span>
+            <span className="navbar__logo-accent">Prosperity</span>
+          </div>
         </Link>
 
         {/* Desktop Navigation */}
@@ -61,11 +65,6 @@ export default function Navbar() {
             </NavLink>
           ))}
         </nav>
-
-        {/* CTA Button */}
-        <Link to="/contact" className="navbar__cta" id="nav-apply-btn">
-          Apply Now
-        </Link>
 
         {/* Mobile Hamburger */}
         <button

@@ -1,5 +1,6 @@
 /* ============================================
    EDEN PROSPERITY — ANIMATIONS
+   Garden of Eden: Vine growth, leaf sway, golden particles
    ============================================ */
 
 /* ---- Scroll Reveal Base ---- */
@@ -101,13 +102,13 @@
   animation: slideInRight var(--transition-slow) forwards;
 }
 
-/* ---- Pulse Glow ---- */
+/* ---- Golden Pulse Glow ---- */
 @keyframes pulseGlow {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(var(--color-secondary-rgb), 0.2);
+    box-shadow: 0 0 20px rgba(var(--color-primary-rgb), 0.15);
   }
   50% {
-    box-shadow: 0 0 32px rgba(var(--color-secondary-rgb), 0.4);
+    box-shadow: 0 0 32px rgba(var(--color-primary-rgb), 0.35);
   }
 }
 
@@ -115,7 +116,7 @@
   animation: pulseGlow 3s ease-in-out infinite;
 }
 
-/* ---- Shimmer (for loading states) ---- */
+/* ---- Shimmer (loading states) ---- */
 @keyframes shimmer {
   0% { background-position: -200% 0; }
   100% { background-position: 200% 0; }
@@ -130,6 +131,93 @@
   );
   background-size: 200% 100%;
   animation: shimmer 1.5s ease-in-out infinite;
+}
+
+/* ============================================
+   VINE & LEAF ANIMATIONS — Garden of Eden
+   ============================================ */
+
+/* ---- Leaf Sway — gentle floating motion ---- */
+@keyframes leafSway {
+  0%, 100% {
+    transform: rotate(0deg) translateX(0);
+  }
+  25% {
+    transform: rotate(3deg) translateX(2px);
+  }
+  75% {
+    transform: rotate(-2deg) translateX(-1px);
+  }
+}
+
+.leaf-sway {
+  animation: leafSway 4s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+/* ---- Vine Draw — stroke reveals path ---- */
+@keyframes vineGrow {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* ---- Leaf Appear — fade in with slight scale ---- */
+@keyframes leafAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.4) rotate(-20deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.leaf-appear {
+  animation: leafAppear 0.8s ease-out forwards;
+}
+
+/* ---- Golden Particle Float ---- */
+@keyframes particleFloat {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-60px) scale(0.3);
+  }
+}
+
+/* ---- Golden Shimmer text ---- */
+@keyframes goldShimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.gold-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--color-gold-dark) 0%,
+    var(--color-gold-light) 25%,
+    var(--color-gold) 50%,
+    var(--color-gold-light) 75%,
+    var(--color-gold-dark) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: goldShimmer 4s linear infinite;
 }
 
 /* ---- Page Transition ---- */
@@ -153,7 +241,10 @@
   .slide-in-left,
   .slide-in-right,
   .pulse-glow,
-  .shimmer {
+  .shimmer,
+  .leaf-sway,
+  .leaf-appear,
+  .gold-shimmer {
     animation: none !important;
     transition: none !important;
     opacity: 1 !important;

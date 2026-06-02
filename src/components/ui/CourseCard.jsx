@@ -8,7 +8,9 @@ import './CourseCard.css';
  * @param {object} props
  * @param {string} props.title - Course name
  * @param {string} props.description - Course description
- * @param {string} props.price - Display price (e.g. "$197")
+ * @param {string} props.price - Display price (e.g. "$1,500")
+ * @param {string} [props.tier] - Tier label (starter, professional, enterprise)
+ * @param {boolean} [props.popular] - Show "Most Popular" badge
  * @param {string} [props.image] - Course cover image URL
  * @param {string[]} [props.highlights] - Key selling points
  * @param {function} [props.onPurchase] - Future payment handler
@@ -17,15 +19,29 @@ export default function CourseCard({
   title,
   description,
   price,
+  tier,
+  popular = false,
   image,
   highlights = [],
   onPurchase,
 }) {
+  /** Maps tier ID to a human label */
+  const tierLabels = {
+    starter: 'Starter',
+    professional: 'Professional',
+    enterprise: 'Enterprise',
+  };
+
   return (
-    <div className="course-card">
+    <div className={`course-card ${popular ? 'course-card--popular' : ''}`}>
       {image && (
         <div className="course-card__image-wrap">
           <img src={image} alt={title} className="course-card__image" />
+        </div>
+      )}
+      {tier && (
+        <div className="course-card__tier">
+          {tierLabels[tier] || tier}
         </div>
       )}
       <div className="course-card__content">

@@ -1,10 +1,14 @@
+/* ============================================
+   SERVICES OVERVIEW — Garden of Eden
+   ============================================ */
+
 .services-overview__header {
   text-align: center;
-  margin-bottom: var(--space-12);
+  margin-bottom: var(--space-10);
 }
 
 .services-overview__title {
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-3);
 }
 
 .services-overview__subtitle {
@@ -23,6 +27,5 @@
 @media (max-width: 768px) {
   .services-overview__grid {
     grid-template-columns: 1fr;
-    gap: var(--space-4);
   }
 }

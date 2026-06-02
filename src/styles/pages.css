@@ -1,5 +1,5 @@
 /* ============================================
-   SHARED PAGE LAYOUT UTILITIES
+   SHARED PAGE LAYOUT UTILITIES — Garden of Eden
    Used across dedicated pages for consistent layout.
    ============================================ */
 
@@ -27,16 +27,19 @@
 }
 
 .page-two-col__media {
-  border-radius: var(--radius-xl);
   overflow: hidden;
-  border: 1px solid var(--color-border);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .page-two-col__image {
   width: 100%;
+  height: auto;
   display: block;
-  object-fit: cover;
+  object-fit: contain;
+  filter: drop-shadow(0 0 30px rgba(201, 168, 76, 0.35))
+          drop-shadow(0 0 15px rgba(201, 168, 76, 0.2));
 }
 
 /* ---- Centered Section Header ---- */
@@ -85,7 +88,7 @@
 }
 
 .feature-list__icon {
-  color: var(--color-secondary);
+  color: var(--color-gold);
   flex-shrink: 0;
 }
 
@@ -93,7 +96,7 @@
 .step-card {
   position: relative;
   padding: var(--space-8);
-  background: var(--color-bg);
+  background: var(--color-dark-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   text-align: center;
@@ -105,12 +108,12 @@
   right: var(--space-4);
   font-size: var(--font-size-4xl);
   font-weight: var(--font-weight-extrabold);
-  color: rgba(var(--color-primary-rgb), 0.08);
+  color: rgba(var(--color-primary-rgb), 0.12);
   line-height: 1;
 }
 
 .step-card__icon {
-  color: var(--color-secondary);
+  color: var(--color-gold);
   margin-bottom: var(--space-4);
 }
 

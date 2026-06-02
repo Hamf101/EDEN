@@ -1,52 +1,49 @@
 /* ============================================
-   SERVICE CARD STYLES
+   SERVICE CARD — Garden of Eden
    ============================================ */
 
 .service-card {
   display: flex;
   flex-direction: column;
+  gap: var(--space-4);
   padding: var(--space-8);
-  background: var(--color-bg);
+  background: var(--color-dark-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   text-decoration: none;
-  transition: transform var(--transition-base),
-              border-color var(--transition-base),
+  transition: border-color var(--transition-base),
               box-shadow var(--transition-base),
-              background-color var(--transition-base);
+              transform var(--transition-base);
 }
 
 .service-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(var(--color-primary-rgb), 0.3);
-  box-shadow: 0 8px 30px rgba(var(--color-primary-rgb), 0.1);
+  border-color: rgba(var(--color-primary-rgb), 0.35);
+  box-shadow: var(--shadow-gold-glow-sm);
+  transform: translateY(-4px);
 }
 
 .service-card__icon {
+  color: var(--color-gold);
+  width: 48px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 56px;
-  height: 56px;
-  border-radius: var(--radius-md);
   background: rgba(var(--color-primary-rgb), 0.1);
-  color: var(--color-secondary);
-  margin-bottom: var(--space-6);
+  border-radius: var(--radius-md);
 }
 
 .service-card__title {
+  font-family: var(--font-family-heading);
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text);
-  margin-bottom: var(--space-3);
 }
 
 .service-card__description {
   font-size: var(--font-size-sm);
   color: var(--color-text-secondary);
   line-height: var(--line-height-relaxed);
-  flex: 1;
-  margin-bottom: var(--space-6);
 }
 
 .service-card__link {
@@ -55,7 +52,8 @@
   gap: var(--space-2);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
-  color: var(--color-secondary);
+  color: var(--color-gold);
+  margin-top: auto;
   transition: gap var(--transition-fast);
 }
 

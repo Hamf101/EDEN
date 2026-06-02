@@ -1,72 +1,47 @@
 /* ============================================
-   CTA BANNER STYLES
+   CTA BANNER — Garden of Eden
    ============================================ */
 
 .cta-banner {
-  position: relative;
-  padding: var(--space-20) var(--space-6);
-  background-color: var(--color-dark-surface);
-  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    var(--color-dark-surface) 0%,
+    rgba(var(--color-primary-rgb), 0.08) 50%,
+    var(--color-dark-surface) 100%
+  );
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-12) 0;
+  margin: var(--space-8) 0;
 }
 
 .cta-banner__inner {
-  position: relative;
-  z-index: var(--z-base);
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-6);
+  padding: var(--space-20) var(--space-6);
 }
 
 .cta-banner__title {
-  font-size: var(--font-size-5xl);
-  font-weight: var(--font-weight-extrabold);
-  color: var(--color-white);
-  line-height: var(--line-height-tight);
-}
-
-.cta-banner__title .text-gradient {
-  color: var(--color-secondary-light);
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-snug);
+  margin-bottom: var(--space-5);
 }
 
 .cta-banner__subtitle {
   font-size: var(--font-size-lg);
-  color: rgba(var(--color-white-rgb), 0.85);
-  max-width: 560px;
-  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  max-width: 550px;
+  margin: 0 auto var(--space-8);
 }
 
 .cta-banner__actions {
   display: flex;
-  gap: var(--space-4);
-  margin-top: var(--space-4);
-  flex-wrap: wrap;
   justify-content: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
 }
 
-/* Override button colors on purple bg */
-.cta-banner .btn--primary {
-  background: var(--color-secondary);
-  color: var(--color-dark);
-}
-
-.cta-banner .btn--primary:hover {
-  background: var(--color-secondary-light);
-}
-
-.cta-banner .btn--secondary {
-  color: var(--color-white);
-  border-color: rgba(var(--color-white-rgb), 0.4);
-}
-
-.cta-banner .btn--secondary:hover {
-  border-color: var(--color-white);
-  background: rgba(var(--color-white-rgb), 0.1);
-  color: var(--color-white);
-}
-
-/* ---- Responsive ---- */
 @media (max-width: 768px) {
   .cta-banner__title {
     font-size: var(--font-size-3xl);
@@ -74,7 +49,6 @@
 
   .cta-banner__actions {
     flex-direction: column;
-    width: 100%;
-    max-width: 320px;
+    align-items: center;
   }
 }

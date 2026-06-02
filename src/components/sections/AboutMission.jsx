@@ -1,5 +1,5 @@
 import SectionWrapper from '../ui/SectionWrapper';
-import founderImg from '../../assets/flyer-business-loan.jpg';
+import founderImg from '../../assets/founder_transparent.png';
 import './AboutMission.css';
 
 /**
@@ -10,8 +10,8 @@ export default function AboutMission() {
     <SectionWrapper id="about" bg="transparent">
       <div className="about-mission">
         <div className="about-mission__image-col">
-          <div className="about-mission__image-frame">
-            <img src={founderImg} alt="Eden Prosperity — Need A Business Loan?" />
+          <div className="about-mission__portrait">
+            <img src={founderImg} alt="Founder of Eden Prosperity" />
           </div>
         </div>
 

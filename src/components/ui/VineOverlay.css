@@ -1,0 +1,75 @@
+/* ============================================
+   VINE OVERLAY — Garden of Eden
+   ============================================ */
+
+.vine-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: var(--z-vine);
+  overflow: visible;
+}
+
+/* ---- SVG Vines ---- */
+.vine-svg {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 112px;
+  overflow: visible;
+  transition: opacity 0.3s ease;
+}
+
+.vine-svg--left {
+  left: 0;
+}
+
+.vine-svg--right {
+  right: -8px;
+  transform: scaleX(-1);
+}
+
+.vine-path {
+  transition: stroke-dashoffset 0.05s linear;
+}
+
+/* ---- Golden Particles ---- */
+.vine-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 1s ease;
+}
+
+.vine-particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: var(--color-gold);
+  border-radius: 50%;
+  animation: particleFloat 4s ease-in-out infinite;
+  box-shadow: 0 0 6px var(--color-gold-glow);
+}
+
+/* ---- Responsive: Hide on small screens ---- */
+@media (max-width: 768px) {
+  .vine-svg {
+    width: 64px;
+    opacity: 0.5;
+  }
+
+  .vine-particles {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .vine-overlay {
+    display: none;
+  }
+}

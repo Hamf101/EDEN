@@ -1,10 +1,8 @@
 import Button from '../ui/Button';
-import founderImg from '../../assets/flyer-business-funding.jpg';
 import './Hero.css';
 
 /**
- * Hero section — full viewport with headline, subtext, CTA, and founder image.
- * Split layout: text left, image right on desktop.
+ * Hero section — full viewport with headline, subtext, CTA, and proof points.
  */
 export default function Hero() {
   return (
@@ -22,7 +20,7 @@ export default function Hero() {
             through business ownership.
           </p>
           <div className="hero__actions fade-up fade-up-delay-3">
-            <Button variant="primary" size="lg" href="/contact">
+            <Button variant="primary" size="lg" href="/onboarding/business">
               Apply Now
             </Button>
             <Button variant="secondary" size="lg" href="/business-loans">
@@ -45,12 +43,6 @@ export default function Hero() {
               <span className="hero__proof-value">No Proof</span>
               <span className="hero__proof-label">Of Income Required</span>
             </div>
-          </div>
-        </div>
-
-        <div className="hero__image-area fade-up fade-up-delay-2">
-          <div className="hero__image-frame">
-            <img src={founderImg} alt="Eden Prosperity — Business Funding" />
           </div>
         </div>
       </div>

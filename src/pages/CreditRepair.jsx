@@ -1,7 +1,6 @@
 import SectionWrapper from '../components/ui/SectionWrapper';
 import Button from '../components/ui/Button';
 import { ShieldCheck, TrendingUp, FileSearch, AlertTriangle } from 'lucide-react';
-import flyerImg from '../assets/flyer-credit-repair.jpg';
 import './CreditRepair.css';
 
 /**
@@ -24,7 +23,7 @@ export default function CreditRepair() {
               strategies help clients unlock better rates, higher limits, and more
               opportunities.
             </p>
-            <Button variant="primary" size="lg" href="/contact">
+            <Button variant="primary" size="lg" href="/onboarding/credit">
               Start Your Journey
             </Button>
           </div>
@@ -90,7 +89,7 @@ export default function CreditRepair() {
 
       {/* ---- Your Credit Is Your Superpower ---- */}
       <SectionWrapper id="credit-overview" bg="transparent">
-        <div className="page-two-col">
+        <div className="credit-overview">
           <div className="page-two-col__content">
             <h2>Your Credit Is Your <span className="text-gradient">Superpower</span></h2>
             <p>
@@ -105,14 +104,6 @@ export default function CreditRepair() {
             <Button variant="primary" size="lg" href="/contact">
               Get Started
             </Button>
-          </div>
-
-          <div className="page-two-col__media">
-            <img
-              src={flyerImg}
-              alt="Eden Prosperity — Credit Repair Services"
-              className="page-two-col__image"
-            />
           </div>
         </div>
       </SectionWrapper>

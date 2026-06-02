@@ -1,0 +1,282 @@
+/* ============================================
+   BUSINESS ONBOARDING — Garden of Eden
+   ============================================ */
+
+/* ---- Hero ---- */
+.onboarding-hero {
+  padding: calc(var(--nav-height) + var(--space-20)) 0 var(--space-16);
+  text-align: center;
+  background: radial-gradient(
+    ellipse at 50% 40%,
+    rgba(var(--color-primary-rgb), 0.06) 0%,
+    var(--color-bg) 60%
+  );
+}
+
+.onboarding-hero__inner {
+  max-width: 700px;
+}
+
+.onboarding-hero__icon {
+  color: var(--color-gold);
+  margin-bottom: var(--space-5);
+}
+
+.onboarding-hero__title {
+  font-family: var(--font-family-heading);
+  margin-bottom: var(--space-4);
+}
+
+.onboarding-hero__subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+}
+
+/* ---- Qualifications ---- */
+.onboarding-qualifications {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.onboarding-qualifications__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.onboarding-qualifications__alert-icon {
+  color: var(--color-gold);
+}
+
+.onboarding-qualifications__subtitle {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-6);
+}
+
+.onboarding-qualifications__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.onboarding-qualifications__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-dark-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.onboarding-qualifications__check {
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+/* ---- Documents ---- */
+.onboarding-docs {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.onboarding-docs__subtitle {
+  color: var(--color-text-secondary);
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-8);
+}
+
+.onboarding-docs__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+.onboarding-doc-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-dark-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  text-align: left;
+}
+
+.onboarding-doc-card__icon {
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.onboarding-doc-card__label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  flex: 1;
+}
+
+.onboarding-doc-card__optional {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+/* ---- Form Wrapper ---- */
+.onboarding-form-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.onboarding-form-subtitle {
+  color: var(--color-text-secondary);
+  margin-top: var(--space-2);
+  margin-bottom: var(--space-8);
+}
+
+/* ---- Form ---- */
+.onboarding-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.onboarding-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+}
+
+.onboarding-form__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.onboarding-form__label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+}
+
+.onboarding-form__input {
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-dark-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  font-size: var(--font-size-base);
+  transition: border-color var(--transition-fast);
+}
+
+.onboarding-form__input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.onboarding-form__input:focus {
+  border-color: var(--color-gold);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.1);
+}
+
+.onboarding-form__textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.onboarding-form__input option {
+  background: var(--color-dark-surface);
+  color: var(--color-text);
+}
+
+/* ---- Section Title ---- */
+.onboarding-form__section-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding-top: var(--space-4);
+  margin-top: var(--space-2);
+  border-top: 1px solid var(--color-border);
+  color: var(--color-gold);
+}
+
+.onboarding-form__section-title h3 {
+  font-size: var(--font-size-lg);
+  color: var(--color-text);
+}
+
+/* ---- Uploads ---- */
+.onboarding-form__uploads {
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+.onboarding-form__uploads h3 {
+  font-size: var(--font-size-lg);
+  color: var(--color-text);
+  margin-bottom: var(--space-4);
+}
+
+.onboarding-form__upload-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+.onboarding-form__upload-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-6);
+  background: var(--color-dark-elevated);
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  text-align: center;
+  font-size: var(--font-size-sm);
+  transition: border-color var(--transition-fast);
+  cursor: pointer;
+}
+
+.onboarding-form__upload-item:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+.onboarding-form__upload-item:focus-within {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.12);
+  color: var(--color-gold);
+}
+
+.onboarding-form__upload-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  clip-path: inset(50%);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .onboarding-form__row {
+    grid-template-columns: 1fr;
+  }
+
+  .onboarding-docs__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .onboarding-form__upload-grid {
+    grid-template-columns: 1fr;
+  }
+}

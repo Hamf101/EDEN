@@ -1,13 +1,21 @@
 import SectionWrapper from '../components/ui/SectionWrapper';
 import Button from '../components/ui/Button';
-import { Landmark, HandCoins, Handshake } from 'lucide-react';
-import flyerImg from '../assets/flyer-business-funding.jpg';
+import { Landmark, HandCoins, Handshake, ShieldCheck, ArrowRight } from 'lucide-react';
 import './BusinessFunding.css';
 
 /**
  * Business Funding dedicated page.
- * Unique cyan-accented hero with funding pathway badges + timeline layout.
+ * Includes funding pathways, qualification requirements, and onboarding link.
  */
+
+const QUALIFICATIONS = [
+  'Business operating for at least 12 months',
+  'No prior defaults',
+  'No UCC liens attached to you',
+  'Generating at least $100K/month in revenue',
+  'If you have a website, please attach it',
+];
+
 export default function BusinessFunding() {
   return (
     <div className="page page--business-funding">
@@ -36,15 +44,32 @@ export default function BusinessFunding() {
               <span>Investor Matching</span>
             </div>
           </div>
-
-          <Button variant="primary" size="lg" href="/contact">
-            Explore Options
-          </Button>
         </div>
       </section>
 
+      {/* ---- Qualifications ---- */}
+      <SectionWrapper id="funding-qualifications" bg="surface">
+        <div className="section-header-center">
+          <h2>Qualification <span className="text-gradient">Requirements</span></h2>
+          <p>To qualify for our Business Funding program, you must meet all of the following criteria.</p>
+        </div>
+        <div className="funding-qualifications__list">
+          {QUALIFICATIONS.map((q, i) => (
+            <div key={i} className="funding-qualification-item">
+              <ShieldCheck size={20} className="funding-qualification-item__icon" />
+              <span>{q}</span>
+            </div>
+          ))}
+        </div>
+        <div className="funding-qualifications__cta">
+          <Button variant="primary" size="lg" href="/onboarding/business">
+            Start Your Application <ArrowRight size={18} />
+          </Button>
+        </div>
+      </SectionWrapper>
+
       {/* ---- Funding Types: Timeline layout ---- */}
-      <SectionWrapper id="funding-types" bg="surface">
+      <SectionWrapper id="funding-types" bg="transparent">
         <div className="section-header-center">
           <h2>Funding <span className="text-gradient">Pathways</span></h2>
           <p>Multiple routes to the capital your business needs.</p>
@@ -90,16 +115,8 @@ export default function BusinessFunding() {
       </SectionWrapper>
 
       {/* ---- Overview Section ---- */}
-      <SectionWrapper id="funding-overview" bg="transparent">
-        <div className="page-two-col">
-          <div className="page-two-col__media">
-            <img
-              src={flyerImg}
-              alt="Eden Prosperity — Business Funding"
-              className="page-two-col__image"
-            />
-          </div>
-
+      <SectionWrapper id="funding-overview" bg="surface">
+        <div className="funding-overview">
           <div className="page-two-col__content">
             <h2>Diverse Funding <span className="text-gradient">Solutions</span></h2>
             <p>
@@ -113,8 +130,8 @@ export default function BusinessFunding() {
               established business seeking growth funding, our team provides
               personalized guidance every step of the way.
             </p>
-            <Button variant="primary" size="lg" href="/contact">
-              Explore Funding Options
+            <Button variant="primary" size="lg" href="/onboarding/business">
+              Start Your Application
             </Button>
           </div>
         </div>

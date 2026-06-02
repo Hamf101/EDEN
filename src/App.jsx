@@ -8,6 +8,8 @@ import CreditRepair from './pages/CreditRepair';
 import Courses from './pages/Courses';
 import Testimonials from './pages/Testimonials';
 import Contact from './pages/Contact';
+import BusinessOnboarding from './pages/BusinessOnboarding';
+import CreditOnboarding from './pages/CreditOnboarding';
 
 /**
  * Root application component.
@@ -26,6 +28,8 @@ export default function App() {
           <Route path="/courses" element={<Courses />} />
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/onboarding/business" element={<BusinessOnboarding />} />
+          <Route path="/onboarding/credit" element={<CreditOnboarding />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -26,16 +26,20 @@ function InstagramIcon({ size = 18 }) {
 import './Footer.css';
 
 /**
- * Shared footer component.
- * Three-column layout: brand info, quick links, contact info.
+ * Shared footer component — Garden of Eden themed.
+ * Four-column layout: Brand, Services, Company, Newsletter.
  */
-const quickLinks = [
+const serviceLinks = [
   { to: '/business-loans', label: 'Business Loans' },
   { to: '/business-funding', label: 'Business Funding' },
   { to: '/credit-repair', label: 'Credit Repair' },
   { to: '/courses', label: 'Courses' },
+];
+
+const companyLinks = [
+  { to: '/', label: 'About Us' },
   { to: '/testimonials', label: 'Testimonials' },
-  { to: '/contact', label: 'Contact Us' },
+  { to: '/contact', label: 'Contact' },
 ];
 
 export default function Footer() {
@@ -43,6 +47,18 @@ export default function Footer() {
 
   return (
     <footer className="footer" id="main-footer">
+      {/* Gold vine separator */}
+      <div className="footer__vine-separator" aria-hidden="true">
+        <svg viewBox="0 0 1200 40" preserveAspectRatio="none" fill="none">
+          <path
+            d="M0 20 C200 5, 400 35, 600 20 C800 5, 1000 35, 1200 20"
+            stroke="var(--color-gold-dark)"
+            strokeWidth="1"
+            opacity="0.3"
+          />
+        </svg>
+      </div>
+
       <div className="footer__inner container">
         {/* Brand Column */}
         <div className="footer__brand">
@@ -54,13 +70,31 @@ export default function Footer() {
             Building wealth, creating financial freedom, and empowering
             entrepreneurs through business ownership.
           </p>
+          <div className="footer__social">
+            <a
+              href="https://www.instagram.com/fundedbykc/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer__social-link"
+              aria-label="Instagram"
+            >
+              <InstagramIcon size={18} />
+            </a>
+            <a
+              href="mailto:eden@prosperitygroupllc.net"
+              className="footer__social-link"
+              aria-label="Email"
+            >
+              <Mail size={18} />
+            </a>
+          </div>
         </div>
 
-        {/* Quick Links */}
-        <div className="footer__links">
-          <h4 className="footer__heading">Quick Links</h4>
+        {/* Services Column */}
+        <div className="footer__col">
+          <h4 className="footer__heading">Services</h4>
           <nav className="footer__nav">
-            {quickLinks.map((link) => (
+            {serviceLinks.map((link) => (
               <Link key={link.to} to={link.to} className="footer__link">
                 {link.label}
                 <ArrowUpRight size={14} />
@@ -69,27 +103,36 @@ export default function Footer() {
           </nav>
         </div>
 
-        {/* Contact Info */}
-        <div className="footer__contact">
-          <h4 className="footer__heading">Get In Touch</h4>
-          <div className="footer__contact-items">
-            <a
-              href="mailto:EdenProsperityLLC@Gmail.com"
-              className="footer__contact-item"
-            >
-              <Mail size={18} />
-              <span>EdenProsperityLLC@Gmail.com</span>
-            </a>
-            <a
-              href="https://instagram.com/_K_C_BIG"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="footer__contact-item"
-            >
-              <InstagramIcon size={18} />
-              <span>@_K_C_BIG</span>
-            </a>
-          </div>
+        {/* Company Column */}
+        <div className="footer__col">
+          <h4 className="footer__heading">Company</h4>
+          <nav className="footer__nav">
+            {companyLinks.map((link) => (
+              <Link key={link.to} to={link.to} className="footer__link">
+                {link.label}
+                <ArrowUpRight size={14} />
+              </Link>
+            ))}
+          </nav>
+        </div>
+
+        {/* Newsletter Column */}
+        <div className="footer__col">
+          <h4 className="footer__heading">Newsletter</h4>
+          <p className="footer__newsletter-text">
+            Get strategic insights delivered to your inbox.
+          </p>
+          <form className="footer__newsletter-form" onSubmit={(e) => e.preventDefault()}>
+            <input
+              type="email"
+              placeholder="Email Address"
+              className="footer__newsletter-input"
+              aria-label="Email address for newsletter"
+            />
+            <button type="submit" className="footer__newsletter-btn">
+              Subscribe
+            </button>
+          </form>
         </div>
       </div>
 
@@ -97,7 +140,7 @@ export default function Footer() {
       <div className="footer__bottom">
         <div className="container footer__bottom-inner">
           <p className="footer__copyright">
-            &copy; {currentYear} Eden Prosperity LLC. All rights reserved.
+            &copy; {currentYear} Eden Prosperity Group LLC. All rights reserved.
           </p>
           <p className="footer__blessing">
             We&apos;re blessed to be a blessing.

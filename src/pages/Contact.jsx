@@ -44,25 +44,25 @@ export default function Contact() {
 
           <div className="contact-hero__cards">
             <a
-              href="mailto:EdenProsperityLLC@Gmail.com"
+              href="mailto:eden@prosperitygroupllc.net"
               className="contact-hero__card"
             >
               <Mail size={24} className="contact-hero__card-icon" />
               <span className="contact-hero__card-label">Email</span>
               <span className="contact-hero__card-value">
-                EdenProsperityLLC@Gmail.com
+                eden@prosperitygroupllc.net
               </span>
             </a>
 
             <a
-              href="https://instagram.com/_K_C_BIG"
+              href="https://www.instagram.com/fundedbykc/"
               target="_blank"
               rel="noopener noreferrer"
               className="contact-hero__card"
             >
               <InstagramIcon size={24} />
               <span className="contact-hero__card-label">Instagram</span>
-              <span className="contact-hero__card-value">@_K_C_BIG</span>
+              <span className="contact-hero__card-value">@fundedbykc</span>
             </a>
 
             <div className="contact-hero__card">

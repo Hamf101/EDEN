@@ -1,19 +1,20 @@
 import { Outlet } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import VineOverlay from '../ui/VineOverlay';
 
 /**
- * Layout shell that wraps all pages.
- * Provides persistent Navbar and Footer around routed content.
+ * Shared layout shell — wraps every page with nav, footer, and vine overlay.
  */
 export default function Layout() {
   return (
-    <div className="layout">
+    <>
       <Navbar />
-      <main className="layout__main">
+      <VineOverlay />
+      <main>
         <Outlet />
       </main>
       <Footer />
-    </div>
+    </>
   );
 }

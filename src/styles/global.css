@@ -1,5 +1,6 @@
 /* ============================================
    EDEN PROSPERITY — GLOBAL STYLES
+   Garden of Eden Dark Theme
    ============================================ */
 
 /* ---- Reset ---- */
@@ -29,9 +30,10 @@ body {
 
 /* ---- Typography ---- */
 h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-heading);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-tight);
-  letter-spacing: var(--letter-spacing-tight);
+  letter-spacing: var(--letter-spacing-wide);
   color: var(--color-text);
 }
 
@@ -61,13 +63,13 @@ p {
 }
 
 a {
-  color: var(--color-secondary);
+  color: var(--color-primary);
   text-decoration: none;
   transition: color var(--transition-fast);
 }
 
 a:hover {
-  color: var(--color-secondary-light);
+  color: var(--color-primary-light);
 }
 
 /* ---- Images ---- */
@@ -116,7 +118,10 @@ input, textarea, select {
 
 /* ---- Utility: Text ---- */
 .text-gradient {
-  color: var(--color-primary);
+  background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-light) 50%, var(--color-gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .text-muted {
@@ -134,26 +139,15 @@ input, textarea, select {
 
 /* ---- Selection ---- */
 ::selection {
-  background-color: rgba(var(--color-secondary-rgb), 0.3);
+  background-color: rgba(var(--color-primary-rgb), 0.3);
   color: var(--color-text);
 }
 
-/* ---- Scrollbar ---- */
+/* ---- Scrollbar (Hidden) ---- */
 ::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--color-bg-alt);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--color-border);
-  border-radius: var(--radius-full);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-muted);
+  display: none;
+  width: 0;
+  background: transparent;
 }
 
 /* ---- Responsive Typography ---- */

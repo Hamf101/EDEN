@@ -1,26 +1,18 @@
 /* ============================================
-   TESTIMONIAL CARD STYLES
+   TESTIMONIAL CARD — Garden of Eden
    ============================================ */
 
 .testimonial-card {
-  display: flex;
-  flex-direction: column;
   padding: var(--space-8);
-  background: var(--color-bg);
+  background: var(--color-dark-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   transition: border-color var(--transition-base), box-shadow var(--transition-base);
 }
 
 .testimonial-card:hover {
-  border-color: rgba(var(--color-accent-light), 0.5);
-  box-shadow: 0 4px 20px rgba(245, 158, 11, 0.08);
-}
-
-.testimonial-card__stars {
-  display: flex;
-  gap: var(--space-1);
-  margin-bottom: var(--space-5);
+  border-color: rgba(var(--color-primary-rgb), 0.3);
+  box-shadow: var(--shadow-gold-glow-sm);
 }
 
 .testimonial-card__quote {
@@ -28,22 +20,26 @@
   color: var(--color-text-secondary);
   line-height: var(--line-height-relaxed);
   font-style: italic;
-  flex: 1;
-  margin-bottom: var(--space-6);
+  margin-bottom: var(--space-5);
+}
+
+.testimonial-card__stars {
+  display: flex;
+  gap: var(--space-1);
+  color: var(--color-gold);
+  margin-bottom: var(--space-4);
 }
 
 .testimonial-card__author {
   display: flex;
   flex-direction: column;
   gap: var(--space-1);
-  padding-top: var(--space-4);
-  border-top: 1px solid var(--color-border);
 }
 
 .testimonial-card__name {
-  font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text);
+  font-size: var(--font-size-sm);
 }
 
 .testimonial-card__role {

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import SectionWrapper from '../components/ui/SectionWrapper';
 import TestimonialCard from '../components/ui/TestimonialCard';
 import { testimonials } from '../data/testimonials';
@@ -6,11 +7,25 @@ import './Testimonials.css';
 
 /**
  * Testimonials dedicated page.
- * Unique dark hero with a featured pull-quote + full testimonial listing.
+ * Features a dark hero with a featured pull-quote,
+ * plus a tabbed listing for Credit Repair vs Business Funding testimonials.
  */
+
+const TABS = [
+  { id: 'all', label: 'All Testimonials' },
+  { id: 'credit-repair', label: 'Credit Repair' },
+  { id: 'business-funding', label: 'Business Funding' },
+];
+
 export default function Testimonials() {
+  const [activeTab, setActiveTab] = useState('all');
+
   const featured = testimonials[0];
-  const remaining = testimonials.slice(1);
+
+  const filtered =
+    activeTab === 'all'
+      ? testimonials
+      : testimonials.filter((t) => t.category === activeTab);
 
   return (
     <div className="page page--testimonials">
@@ -36,13 +51,24 @@ export default function Testimonials() {
         </div>
       </section>
 
-      {/* ---- All Testimonials ---- */}
+      {/* ---- Tabbed Testimonial Listing ---- */}
       <SectionWrapper id="all-testimonials" bg="transparent">
-        <p className="testimonials-section__label">
-          More Success Stories
-        </p>
+        {/* Tab Toggle */}
+        <div className="testimonials-tabs" id="testimonials-tab-bar">
+          {TABS.map((tab) => (
+            <button
+              key={tab.id}
+              className={`testimonials-tab ${activeTab === tab.id ? 'testimonials-tab--active' : ''}`}
+              onClick={() => setActiveTab(tab.id)}
+              id={`tab-${tab.id}`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+
         <div className="grid-3">
-          {remaining.map((t) => (
+          {filtered.map((t) => (
             <TestimonialCard key={t.id} {...t} />
           ))}
         </div>

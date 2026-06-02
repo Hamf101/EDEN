@@ -1,72 +1,51 @@
 /* ============================================
-   COURSES PAGE — UNIQUE STYLES
+   COURSES PAGE — Garden of Eden
    ============================================ */
 
-/* ---- Hero: Warm amber accent ---- */
 .courses-hero {
-  position: relative;
-  padding-top: calc(var(--nav-height) + var(--space-16));
-  padding-bottom: var(--space-16);
-  background: linear-gradient(180deg, #FFFBEB 0%, var(--color-bg) 100%);
-  overflow: hidden;
+  padding: calc(var(--nav-height) + var(--space-20)) 0 var(--space-16);
+  text-align: center;
+  background: radial-gradient(
+    ellipse at 50% 40%,
+    rgba(var(--color-primary-rgb), 0.06) 0%,
+    var(--color-bg) 60%
+  );
 }
 
 .courses-hero__inner {
-  position: relative;
-  z-index: var(--z-base);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-6);
+  max-width: 700px;
 }
 
 .courses-hero__title {
-  font-size: var(--font-size-5xl);
-  font-weight: var(--font-weight-extrabold);
-  color: var(--color-text);
-  line-height: var(--line-height-tight);
-}
-
-.courses-hero__title .text-gradient {
-  color: var(--color-accent);
+  font-family: var(--font-family-heading);
+  margin-bottom: var(--space-4);
 }
 
 .courses-hero__subtitle {
   font-size: var(--font-size-lg);
   color: var(--color-text-secondary);
-  line-height: var(--line-height-relaxed);
-  max-width: 600px;
+  margin-bottom: var(--space-8);
 }
 
-/* Stats row */
 .courses-hero__stats {
   display: flex;
-  gap: var(--space-10);
-  margin-top: var(--space-4);
+  justify-content: center;
+  gap: var(--space-6);
+  flex-wrap: wrap;
 }
 
 .courses-hero__stat {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
+  gap: var(--space-2);
   font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
   color: var(--color-text-secondary);
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-dark-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
 }
 
 .courses-hero__stat svg {
-  color: var(--color-accent);
-}
-
-/* ---- Responsive ---- */
-@media (max-width: 768px) {
-  .courses-hero__title {
-    font-size: var(--font-size-3xl);
-  }
-
-  .courses-hero__stats {
-    flex-direction: column;
-    gap: var(--space-4);
-  }
+  color: var(--color-gold);
 }
