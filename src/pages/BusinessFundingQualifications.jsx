@@ -1,6 +1,6 @@
 import SectionWrapper from '../components/ui/SectionWrapper';
 import Button from '../components/ui/Button';
-import { Landmark, HandCoins, Handshake, ShieldCheck, ArrowRight } from 'lucide-react';
+import { Landmark, HandCoins, Handshake, ShieldCheck, ArrowRight, FileText } from 'lucide-react';
 import './BusinessFundingQualifications.css';
 
 /**
@@ -14,6 +14,14 @@ const QUALIFICATIONS = [
   'No UCC liens attached to you',
   'Generating at least $100K/month in revenue',
   'If you have a website, please attach it',
+];
+
+const REQUIRED_DOCUMENTS = [
+  { label: '3 months business bank statements', required: true },
+  { label: 'PROOF of ownership ID (EIN Letter, LLC Filing, etc.)', required: true },
+  { label: 'Social Security Number (Social)', required: true },
+  { label: 'Latest business tax return (if available, not required)', required: false },
+  { label: 'POS system latest transaction report (if you have a POS system)', required: false },
 ];
 
 export default function BusinessFundingQualifications() {
@@ -65,20 +73,41 @@ export default function BusinessFundingQualifications() {
         </div>
       </SectionWrapper>
 
-      {/* ---- Qualifications ---- */}
+      {/* ---- Qualifications & Documents ---- */}
       <SectionWrapper id="funding-qualifications" bg="surface">
         <div className="section-header-center">
-          <h2>Qualification <span className="text-gradient">Requirements</span></h2>
-          <p>To qualify for our Business Funding program, you must meet all of the following criteria.</p>
+          <h2>Qualification &amp; <span className="text-gradient">Document Requirements</span></h2>
+          <p>Review the criteria and documents needed to qualify your business for funding.</p>
         </div>
-        <div className="funding-qualifications__list">
-          {QUALIFICATIONS.map((q, i) => (
-            <div key={i} className="funding-qualification-item">
-              <ShieldCheck size={20} className="funding-qualification-item__icon" />
-              <span>{q}</span>
+        
+        <div className="funding-requirements-grid">
+          <div className="funding-req-col">
+            <h3 className="funding-req-col__title">Criteria to Qualify</h3>
+            <div className="funding-qualifications__list">
+              {QUALIFICATIONS.map((q, i) => (
+                <div key={i} className="funding-qualification-item">
+                  <ShieldCheck size={20} className="funding-qualification-item__icon" />
+                  <span>{q}</span>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+          
+          <div className="funding-req-col">
+            <h3 className="funding-req-col__title">Documents Needed</h3>
+            <div className="funding-qualifications__list">
+              {REQUIRED_DOCUMENTS.map((doc, i) => (
+                <div key={i} className="funding-qualification-item">
+                  <FileText size={20} className="funding-qualification-item__icon" />
+                  <span>
+                    {doc.label} {!doc.required && <span className="text-muted-light">(Optional)</span>}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
+
         <div className="funding-qualifications__cta">
           <Button variant="primary" size="lg" href="/onboarding/business">
             Start Your Application <ArrowRight size={18} />

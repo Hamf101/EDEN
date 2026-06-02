@@ -250,3 +250,27 @@
   }
 }
 
+/* Requirements Grid */
+.funding-requirements-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  max-width: var(--container-md);
+  margin: 0 auto;
+}
+
+.funding-req-col__title {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-lg);
+  color: var(--color-gold);
+  margin-bottom: var(--space-4);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .funding-requirements-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+}
+
