@@ -130,13 +130,16 @@
   position: absolute;
   left: -2rem;
   bottom: -2rem;
-  width: min(30vw, 24rem);
+  width: min(40vw, calc(24rem + 100px));
   aspect-ratio: 4 / 5;
-  background: url('../assets/eden-branch-right.png') center / cover no-repeat;
+  background: url('../assets/eden-branch-right.png') center / contain no-repeat;
   opacity: 0.15;
   pointer-events: none;
   z-index: 0;
   transform: scaleX(-1);
+  mix-blend-mode: screen;
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 0%, #000 50%, transparent 80%);
+  mask-image: radial-gradient(ellipse at center, #000 0%, #000 50%, transparent 80%);
 }
 .page--business-funding #funding-details .page-two-col__media {
   overflow: visible;

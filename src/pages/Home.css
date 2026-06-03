@@ -409,7 +409,7 @@
   right: -2.5rem;
   bottom: -1rem;
   z-index: 0;
-  width: min(20vw, 16rem);
+  width: min(30vw, calc(16rem + 100px));
   aspect-ratio: 4 / 5;
   background: url('../assets/eden-branch-right.png') center right / contain no-repeat;
   opacity: 0.42;
@@ -605,7 +605,7 @@
   }
 
   .home-mission::after {
-    width: 18rem;
+    width: calc(18rem + 100px);
     opacity: 0.36;
   }
 
@@ -717,7 +717,7 @@
   }
 
   .home-mission::after {
-    width: min(20vw, 16rem);
+    width: min(30vw, calc(16rem + 100px));
     opacity: 0.42;
   }
 
