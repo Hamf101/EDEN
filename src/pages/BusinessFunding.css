@@ -121,6 +121,23 @@
 }
 
 /* ---- Details Portrait ---- */
+.page--business-funding #funding-details {
+  position: relative;
+}
+
+.page--business-funding #funding-details::before {
+  content: '';
+  position: absolute;
+  left: -2rem;
+  bottom: -2rem;
+  width: min(30vw, 24rem);
+  aspect-ratio: 4 / 5;
+  background: url('../assets/eden-branch-right.png') center / cover no-repeat;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+  transform: scaleX(-1);
+}
 .page--business-funding #funding-details .page-two-col__media {
   overflow: visible;
 }
