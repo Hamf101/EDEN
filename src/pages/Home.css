@@ -83,63 +83,6 @@
   margin-top: var(--space-6);
 }
 
-.home-hero__trusted {
-  margin-top: var(--space-8);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-}
-
-.home-hero__trusted-title {
-  color: var(--color-gold-light);
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-bold);
-  letter-spacing: var(--letter-spacing-widest);
-}
-
-.home-hero__trusted-row {
-  display: flex;
-  align-items: center;
-  gap: var(--space-4);
-}
-
-.home-hero__avatars {
-  display: flex;
-  align-items: center;
-}
-
-.home-hero__avatars img {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  border: 2px solid rgba(var(--color-gold-rgb), 0.6);
-  object-fit: cover;
-  object-position: center top;
-  margin-left: -12px;
-  background: var(--color-dark-surface);
-}
-
-.home-hero__avatars img:first-child {
-  margin-left: 0;
-}
-
-.home-hero__rating {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-}
-
-.home-hero__stars {
-  display: flex;
-  color: var(--color-gold);
-  font-size: 14px;
-}
-
-.home-hero__rating span:last-child {
-  color: var(--color-text-secondary);
-  font-size: var(--font-size-xs);
-}
-
 .home-stats {
   background:
     linear-gradient(90deg, rgba(3, 10, 7, 0.55), rgba(7, 32, 20, 0.42), rgba(3, 10, 7, 0.55)),

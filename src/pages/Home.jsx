@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import {
   ArrowRight,
   Banknote,
-  Building2,
   Calendar,
   CheckCircle2,
   Coins,
@@ -18,7 +17,6 @@ import Button from '../components/ui/Button';
 import crownIcon from '../assets/crown-icon.png';
 import heroImage from '../assets/eden-legacy-hero.png';
 import growthImage from '../assets/eden-growth-path.png';
-import founderImage from '../assets/founder_transparent.png';
 import founderPortrait from '../assets/founder_portrait.png';
 import './Home.css';
 
@@ -135,22 +133,6 @@ export default function Home() {
               <Button variant="secondary" size="lg" href="/business-funding">
                 Our Services
               </Button>
-            </div>
-            <div className="home-hero__trusted">
-              <p className="home-hero__trusted-title">TRUSTED BY ENTREPRENEURS NATIONWIDE</p>
-              <div className="home-hero__trusted-row">
-                <div className="home-hero__avatars">
-                  {[...Array(5)].map((_, i) => (
-                    <img key={i} src={founderImage} alt="" aria-hidden="true" />
-                  ))}
-                </div>
-                <div className="home-hero__rating">
-                  <div className="home-hero__stars">
-                    {'★★★★★'.split('').map((star, i) => <span key={i}>{star}</span>)}
-                  </div>
-                  <span>4.9 (500+ Reviews)</span>
-                </div>
-              </div>
             </div>
           </div>
         </div>
