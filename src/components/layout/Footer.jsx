@@ -49,9 +49,12 @@ export default function Footer() {
         <div className="footer__brand">
           <Link to="/" className="footer__logo">
             <img src={logoImg} alt="" className="footer__logo-img" aria-hidden="true" />
-            <span>
-              Eden <strong>Prosperity</strong>
-            </span>
+            <div className="footer__logo-text-wrapper">
+              <span>
+                Eden <strong>Prosperity</strong>
+              </span>
+              <span className="footer__logo-llc">LLC</span>
+            </div>
           </Link>
           <p>
             Building wealth, creating legacy, and empowering entrepreneurs for

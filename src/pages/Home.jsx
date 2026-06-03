@@ -1,9 +1,7 @@
-import { Link } from 'react-router-dom';
 import {
   ArrowRight,
   Banknote,
   Calendar,
-  CheckCircle2,
   Coins,
   CreditCard,
   Landmark,
@@ -14,10 +12,12 @@ import {
   Users,
 } from 'lucide-react';
 import Button from '../components/ui/Button';
-import crownIcon from '../assets/crown-icon.png';
 import heroImage from '../assets/eden-legacy-hero.png';
-import growthImage from '../assets/eden-growth-path.png';
 import founderPortrait from '../assets/founder_portrait.png';
+import ent1 from '../assets/entrepreneur_1_1780505668429.png';
+import ent2 from '../assets/entrepreneur_2_1780505679553.png';
+import ent3 from '../assets/entrepreneur_3_1780505690502.png';
+import ent4 from '../assets/entrepreneur_4_1780505702152.png';
 import './Home.css';
 
 const STATS = [
@@ -60,51 +60,6 @@ const SERVICES = [
   },
 ];
 
-const SCALE_ITEMS = [
-  'Business Funding up to $50 Million',
-  'Same-Day Funding Options Available',
-  'Credit Consulting Results in as Little as 14 Business Days',
-  'Business Formation & Structure',
-  'Website Development & Marketing',
-  'Business Credit Building & Funding Readiness',
-];
-
-const PROGRAMS = [
-  {
-    title: 'Entrepreneur Success Program',
-    price: '$3,500',
-    description:
-      'Designed for entrepreneurs who want more than funding. Establish, structure, and position your business for long-term growth and funding opportunities.',
-    highlights: [
-      'One-on-One Business Consulting',
-      'Business Formation & Structure Guidance',
-      'Professional Website & Brand Setup',
-      'Business Credit Strategy',
-      'Complimentary Credit Optimization',
-      'Funding Preparation & Readiness',
-      'Strategic Growth Planning',
-      'Dedicated Support & Mentorship',
-    ],
-  },
-  {
-    title: 'Business Consulting Mastery',
-    price: '$4,795',
-    description:
-      'Learn directly from an experienced entrepreneur through personalized coaching designed to help you launch, grow, and scale your own consulting business.',
-    highlights: [
-      'One-on-One Business Mentorship',
-      'Credit Consulting Business Setup',
-      'Business Funding Strategies',
-      'Sales & Client Acquisition Training',
-      'Marketing & Brand Development',
-      'Systems, Automation & Operations',
-      'Business Credit Education',
-      '60 Days of Personalized Coaching',
-      'Templates, Tools & Implementation Guides',
-    ],
-  },
-];
-
 /**
  * Premium homepage for Eden Prosperity Group LLC.
  */
@@ -128,11 +83,27 @@ export default function Home() {
             </p>
             <div className="home-hero__actions">
               <Button variant="primary" size="lg" href="/onboarding/business">
-                Start Your Journey <ArrowRight size={18} />
+                Get Started <ArrowRight size={18} />
               </Button>
               <Button variant="secondary" size="lg" href="/business-funding">
-                Our Services
+                View Services
               </Button>
+            </div>
+            
+            <div className="home-hero__trust">
+              <p className="home-kicker">Trusted By Entrepreneurs Nationwide</p>
+              <div className="home-hero__trust-stars">
+                 <div className="home-hero__trust-faces">
+                <img src={ent1} alt="Client 1" />
+                <img src={ent2} alt="Client 2" />
+                <img src={ent3} alt="Client 3" />
+                <img src={ent4} alt="Client 4" />
+              </div>
+                 <div className="home-hero__trust-rating">
+                    <span>★★★★★</span>
+                    <span>4.9 (500+ Reviews)</span>
+                 </div>
+              </div>
             </div>
           </div>
         </div>
@@ -168,89 +139,24 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="home-scale" id="scale">
-        <img src={growthImage} alt="" className="home-scale__image" aria-hidden="true" />
-        <div className="home-scale__overlay" aria-hidden="true" />
-        <div className="home-scale__inner container">
-          <div className="home-scale__content">
-            <h2>Build. Fund. Scale.</h2>
-            <p>
-              Helping entrepreneurs build fundable businesses, access capital,
-              receive credit consulting, and create long-term wealth through
-              business ownership.
-            </p>
-            <ul className="home-check-list">
-              {SCALE_ITEMS.map((item) => (
-                <li key={item}>
-                  <CheckCircle2 size={18} />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-            <div className="home-scale__actions">
-              <Button variant="primary" size="md" href="/onboarding/business">
-                Apply Now <ArrowRight size={16} />
-              </Button>
-              <Button variant="secondary" size="md" href="/contact">
-                Book A Consultation
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="home-section home-section--programs" id="programs">
-        <div className="container">
-          <div className="home-section__header">
-            <p className="home-kicker">Our Programs</p>
-            <h2>Designed For Entrepreneurs Building Legacy</h2>
-          </div>
-          <div className="home-programs">
-            {PROGRAMS.map((program) => (
-              <article className="home-program-card" key={program.title}>
-                <div className="home-program-card__top">
-                  <div className="home-program-card__icon">
-                    <img src={crownIcon} alt="Program Icon" style={{ width: 48, height: 48, objectFit: 'contain' }} />
-                  </div>
-                  <div>
-                    <h3>{program.title}</h3>
-                    <strong>{program.price}</strong>
-                  </div>
-                </div>
-                <p>{program.description}</p>
-                <ul className="home-check-list home-check-list--compact">
-                  {program.highlights.map((item) => (
-                    <li key={item}>
-                      <CheckCircle2 size={15} />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link to="/courses" className="home-card-link">
-                  Learn More <ArrowRight size={16} />
-                </Link>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="home-mission" id="about">
         <div className="home-mission__inner container">
           <div className="home-mission__portrait">
             <img src={founderPortrait} alt="Founder of Eden Prosperity Group LLC" />
           </div>
           <div className="home-mission__copy">
-            <p className="home-kicker">Our Mission</p>
-            <h2>Your Success Is Our Purpose</h2>
+            <p className="home-kicker">Founder's Journey</p>
+            <h2>My Mission Story</h2>
             <p>
-              At Eden Prosperity Group LLC, our mission is to empower
-              entrepreneurs with the tools, knowledge, and capital readiness
-              strategy they need to build successful businesses and create
-              generational wealth.
+              Born in Seoul and raised in the U.S. foster care system, I had to teach myself financial literacy from the ground up. My journey wasn't easy—I faced homelessness, worked multiple jobs, and supported my younger brother as a teenager. Through it all, my faith in God and a pivotal moment fueled my drive to master credit and business finance.
             </p>
-            <p className="home-mission__signature">African Deuck</p>
-            <span>Founder & CEO</span>
+            <p>
+              In 2019, I launched my consulting company to help others achieve financial freedom. Today, my mission is to level the playing field. I want to equip you with the tools to leverage credit, access capital, and build generational wealth.
+            </p>
+            <p>
+              My story is proof that your circumstances don't dictate your future. With faith, knowledge, and the right opportunities, anything is possible.
+            </p>
+            <p className="home-mission__signature">Founder and CEO</p>
           </div>
           <aside className="home-mission__cta">
             <Calendar size={34} />
@@ -260,7 +166,7 @@ export default function Home() {
               you reach your business goals.
             </p>
             <Button variant="primary" size="md" href="/contact">
-              Schedule A Call
+              Schedule Consultation
             </Button>
           </aside>
         </div>
