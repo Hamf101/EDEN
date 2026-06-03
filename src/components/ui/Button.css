@@ -8,10 +8,13 @@
   justify-content: center;
   gap: var(--space-2);
   font-family: var(--font-family);
-  font-weight: var(--font-weight-semibold);
+  font-size: 13px;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
   text-decoration: none;
-  border: 2px solid transparent;
-  border-radius: var(--radius-full);
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
   cursor: pointer;
   transition: transform var(--transition-fast),
               box-shadow var(--transition-fast),
@@ -31,43 +34,39 @@
 
 /* ---- Sizes ---- */
 .btn--sm {
-  font-size: var(--font-size-sm);
-  padding: var(--space-2) var(--space-5);
+  padding: 8px 20px;
 }
 
 .btn--md {
-  font-size: var(--font-size-base);
-  padding: var(--space-3) var(--space-8);
+  padding: 14px 32px;
 }
 
 .btn--lg {
-  font-size: var(--font-size-lg);
-  padding: var(--space-4) var(--space-10);
+  padding: 18px 40px;
 }
 
-/* ---- Primary (Gold gradient) ---- */
+/* ---- Primary (Gold solid) ---- */
 .btn--primary {
-  color: var(--color-dark);
-  background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-light) 100%);
+  color: #000000;
+  background: var(--color-gold);
   border-color: transparent;
 }
 
 .btn--primary:hover {
-  box-shadow: var(--shadow-gold-glow);
-  color: var(--color-dark);
+  background: var(--color-gold-light);
+  color: #000000;
 }
 
 /* ---- Secondary (outline gold) ---- */
 .btn--secondary {
-  color: var(--color-text);
+  color: var(--color-gold);
   background: transparent;
-  border-color: var(--color-border);
+  border-color: var(--color-gold);
 }
 
 .btn--secondary:hover {
-  border-color: var(--color-gold);
-  color: var(--color-gold);
-  background: rgba(var(--color-primary-rgb), 0.06);
+  color: var(--color-gold-light);
+  background: rgba(var(--color-primary-rgb), 0.08);
 }
 
 /* ---- Accent (Solid dark gold) ---- */

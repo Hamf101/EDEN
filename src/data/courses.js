@@ -1,54 +1,44 @@
 /**
- * Course data for Eden Prosperity Group LLC.
- * Three tiers: Credit Consulting Services, Business Mentor Package, Build Your Own Credit Consulting Platform.
+ * Program data for Eden Prosperity Group LLC.
  */
 export const courses = [
   {
-    id: 'credit-consulting-services',
-    title: 'Credit Consulting Services',
+    id: 'entrepreneur-success-program',
+    title: 'Entrepreneur Success Program',
     description:
-      'Fast-track your credit journey to a 700+ score. Our consulting program provides in-depth analysis, personalized action plans, dedicated specialist support, and strategic guidance to rapidly optimize your credit profile.',
-    price: '$1,500',
-    tier: 'starter',
-    highlights: [
-      '700+ credit score optimization focus',
-      'Personalized action plan & strategy',
-      'Dedicated credit specialist',
-      'Priority processing & fast response',
-      'Full credit report analysis & auditing',
-    ],
-  },
-  {
-    id: 'business-mentor-package',
-    title: 'Business Mentor Package',
-    description:
-      'Comprehensive one-on-one teaching with weekly phone sessions. Learn the deep strategies behind personal & business credit optimization, funding leverage, and long-term financial positioning with personalized guidance every step of the way.',
+      'Designed for entrepreneurs who want more than funding. Establish, structure, and position your business for long-term growth and funding opportunities.',
     price: '$3,500',
     tier: 'professional',
     popular: true,
     highlights: [
-      'Weekly 1-on-1 phone sessions',
-      'Deep credit education & strategies',
-      'Business credit building blueprint',
-      'Personalized action plan',
-      'Ongoing mentorship & support',
+      'One-on-one business consulting',
+      'Business formation & structure guidance',
+      'Professional website & brand setup',
+      'Business credit strategy',
+      'Complimentary credit optimization',
+      'Funding preparation & readiness',
+      'Strategic growth planning',
+      'Dedicated support & mentorship',
     ],
   },
   {
-    id: 'build-your-consulting-platform',
-    title: 'Build Your Own Credit Consulting Platform',
+    id: 'business-consulting-mastery',
+    title: 'Business Consulting Mastery',
     description:
-      'Launch your own credit consulting business from the ground up. Get everything you need — complete platform setup, business structure guidance, client management systems, and white-label tools to start generating revenue.',
+      'Learn directly from an experienced entrepreneur through personalized one-on-one coaching designed to help you launch, grow, and scale your own consulting business.',
     price: '$4,795',
     tier: 'enterprise',
     highlights: [
-      'Complete credit consulting platform setup',
-      'Business structure & entity guidance',
-      'Client management system',
-      'White-label tools & templates',
-      'Revenue generation strategies',
-      'Ongoing business coaching',
+      'One-on-one business mentorship',
+      'Credit consulting business setup',
+      'Business funding strategies',
+      'Sales & client acquisition training',
+      'Marketing & brand development',
+      'Systems, automation & operations',
+      'Business credit education',
+      'Revenue growth strategies',
+      '60 days of personalized coaching',
+      'Templates, tools & implementation guides',
     ],
   },
 ];
-

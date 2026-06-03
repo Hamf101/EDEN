@@ -130,7 +130,7 @@ export default function Contact() {
                   <option value="">Select a service...</option>
                   <option value="business-funding">Business Funding</option>
                   <option value="credit-consulting">Credit Consulting</option>
-                  <option value="courses">Courses</option>
+                  <option value="programs">Programs</option>
                   <option value="other">Other</option>
                 </select>
               </div>

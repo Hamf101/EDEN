@@ -7,7 +7,7 @@ export const testimonials = [
     id: 1,
     category: 'business-funding',
     quote:
-      'Eden Prosperity completely changed my perspective on business funding. I went from not knowing where to start to securing a $50,000 business loan in just 3 weeks.',
+      'Eden Prosperity completely changed my perspective on business funding. I went from not knowing where to start to having a clear capital readiness plan.',
     name: 'Marcus T.',
     role: 'Restaurant Owner',
     rating: 5,
@@ -16,7 +16,7 @@ export const testimonials = [
     id: 2,
     category: 'credit-consulting',
     quote:
-      'The credit consulting program was a game-changer. My score went up 120 points, and I was finally able to qualify for the funding I needed to expand my business.',
+      'The credit consulting program was a game-changer. I finally understood my profile, my next steps, and how to prepare my business for better opportunities.',
     name: 'Jasmine R.',
     role: 'E-Commerce Entrepreneur',
     rating: 5,
@@ -25,7 +25,7 @@ export const testimonials = [
     id: 3,
     category: 'business-funding',
     quote:
-      'I had no idea how to leverage credit for my business. The courses taught me everything I needed to know, and now I have multiple funding sources.',
+      'I had no idea how to leverage credit for my business. The program gave me the structure and education I needed to move with confidence.',
     name: 'David M.',
     role: 'Real Estate Investor',
     rating: 5,
@@ -34,7 +34,7 @@ export const testimonials = [
     id: 4,
     category: 'credit-consulting',
     quote:
-      'What sets Eden Prosperity apart is the genuine care for their clients. They don\'t just help you get funding — they educate you so you can keep growing.',
+      'What sets Eden Prosperity apart is the genuine care for their clients. They do not just talk funding - they educate you so you can keep growing.',
     name: 'Tanya S.',
     role: 'Boutique Owner',
     rating: 5,
@@ -52,7 +52,7 @@ export const testimonials = [
     id: 6,
     category: 'credit-consulting',
     quote:
-      'The Business Funding Blueprint course alone was worth 10x the investment. I learned about grants I never even knew existed.',
+      'The funding strategy work helped me see options I did not know existed and understand what my organization needed to prepare.',
     name: 'Lisa W.',
     role: 'Non-Profit Founder',
     rating: 5,
@@ -61,7 +61,7 @@ export const testimonials = [
     id: 7,
     category: 'credit-consulting',
     quote:
-      'My credit was in the 400s. After working with Eden Prosperity, I hit 720 within two months. Now I own two businesses and my credit keeps climbing.',
+      'I came in confused about credit and business structure. Eden Prosperity helped me understand the path and build a more disciplined plan.',
     name: 'Darnell P.',
     role: 'Logistics CEO',
     rating: 5,
@@ -70,10 +70,9 @@ export const testimonials = [
     id: 8,
     category: 'business-funding',
     quote:
-      'They helped me secure $150K in business funding within 30 days. The process was smooth, professional, and they kept me informed every step of the way.',
+      'They helped me understand my funding readiness and organize the next steps for my company. The process was smooth, professional, and clear.',
     name: 'Crystal M.',
     role: 'Healthcare Entrepreneur',
     rating: 5,
   },
 ];
-

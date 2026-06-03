@@ -1,4 +1,5 @@
 import Button from './Button';
+import PackageIcon from './PackageIcon';
 import './CourseCard.css';
 
 /**
@@ -45,6 +46,9 @@ export default function CourseCard({
         </div>
       )}
       <div className="course-card__content">
+        <div className="course-card__program-icon">
+          <PackageIcon size={42} />
+        </div>
         <h3 className="course-card__title">{title}</h3>
         <p className="course-card__description">{description}</p>
 

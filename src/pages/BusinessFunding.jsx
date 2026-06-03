@@ -1,258 +1,163 @@
 import SectionWrapper from '../components/ui/SectionWrapper';
 import Button from '../components/ui/Button';
 import {
-  Landmark,
-  HandCoins,
+  ArrowRight,
+  Banknote,
+  Building2,
+  FileText,
   Handshake,
   ShieldCheck,
-  ArrowRight,
-  FileText,
-  Banknote,
-  Clock,
-  FileCheck,
-  BadgeDollarSign,
-  CreditCard,
-  Building2
+  TrendingUp,
 } from 'lucide-react';
-import founderImg from '../assets/founder2_transparent.png';
+import founderImg from '../assets/founder2_portrait.png';
 import './BusinessFunding.css';
 
-/**
- * Business Funding dedicated page.
- * Merges previous Business Loans & Business Funding pages.
- */
-
-const QUALIFICATIONS = [
-  'Business operating for at least 12 months',
-  'No prior defaults',
-  'No UCC liens attached to you',
-  'Generating at least $100K/month in revenue',
-  'If you have a website, please attach it',
+const READINESS_ITEMS = [
+  'Business structure and entity review',
+  'Revenue and document readiness',
+  'Business credit profile preparation',
+  'Funding pathway recommendations',
+  'Website and brand presence review',
 ];
 
-const REQUIRED_DOCUMENTS = [
-  { label: '3 months business bank statements', required: true },
-  { label: 'PROOF of ownership ID (EIN Letter, LLC Filing, etc.)', required: true },
-  { label: 'Social Security Number (Social)', required: true },
-  { label: 'Latest business tax return (if available, not required)', required: false },
-  { label: 'POS system latest transaction report (if you have a POS system)', required: false },
+const DOCUMENTS = [
+  { label: 'Recent business bank statements', required: true },
+  { label: 'Proof of business ownership', required: true },
+  { label: 'Business entity documents', required: true },
+  { label: 'Tax return or bookkeeping records if available', required: false },
+  { label: 'Website, offer, or sales material if available', required: false },
+];
+
+const PATHWAYS = [
+  {
+    icon: <Banknote size={28} />,
+    title: 'Funding Readiness',
+    text: 'Prepare your business profile, documents, and credit position before approaching lenders or partners.',
+  },
+  {
+    icon: <TrendingUp size={28} />,
+    title: 'Growth Capital Strategy',
+    text: 'Map funding options to your business model, revenue stage, and growth goals.',
+  },
+  {
+    icon: <Handshake size={28} />,
+    title: 'Guided Access',
+    text: 'Move forward with a clear plan, better positioning, and support through the next step.',
+  },
 ];
 
 export default function BusinessFunding() {
   return (
     <div className="page page--business-funding">
-      {/* 1. HERO (from Business Loans, adapted for Business Funding) */}
-      <section className="funding-hero-loans" id="funding-hero">
-        <div className="loans-hero__inner container">
-          <div className="loans-hero__content">
-            <p className="loans-hero__eyebrow">Business Funding</p>
-            <h1 className="loans-hero__title">
-              Access Capital to{' '}
-              <span className="text-gradient">Grow Your Business</span>
+      <section className="capital-hero" id="funding-hero">
+        <div className="capital-hero__inner container">
+          <div className="capital-hero__content">
+            <p className="capital-hero__eyebrow">Capital Readiness</p>
+            <h1 className="capital-hero__title">
+              Build A Fundable <span className="text-gradient">Business</span>
             </h1>
-            <p className="loans-hero__subtitle">
-              Competitive rates, flexible terms, and same-day approval.
-              Get the funding you need without the hassle.
+            <p className="capital-hero__subtitle">
+              We help entrepreneurs organize their business, strengthen their
+              credit profile, and prepare for funding opportunities with a clear
+              capital strategy.
             </p>
+            <Button variant="primary" size="lg" href="/onboarding/business">
+              Start Your Intake <ArrowRight size={18} />
+            </Button>
           </div>
 
-          <div className="loans-hero__stats">
-            <div className="loans-hero__stat-card">
-              <span className="loans-hero__stat-value">$20M+</span>
-              <span className="loans-hero__stat-label">Available Funding</span>
+          <div className="capital-hero__stats">
+            <div className="capital-hero__stat-card">
+              <span className="capital-hero__stat-value">$50M+</span>
+              <span className="capital-hero__stat-label">Funding Network</span>
             </div>
-            <div className="loans-hero__stat-card">
-              <span className="loans-hero__stat-value">Same Day</span>
-              <span className="loans-hero__stat-label">Approval Speed</span>
+            <div className="capital-hero__stat-card">
+              <span className="capital-hero__stat-value">Strategy</span>
+              <span className="capital-hero__stat-label">Before Submission</span>
             </div>
-            <div className="loans-hero__stat-card">
-              <span className="loans-hero__stat-value">No Minimum</span>
-              <span className="loans-hero__stat-label">Credit Score Required</span>
+            <div className="capital-hero__stat-card">
+              <span className="capital-hero__stat-value">1-on-1</span>
+              <span className="capital-hero__stat-label">Guided Support</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 2. SAME-DAY FUNDING CALLOUT BANNER (right under the Hero) */}
-      <SectionWrapper id="same-day-funding-callout" bg="transparent">
-        <div className="funding-callout-card">
-          <div className="funding-callout-card__content">
-            <h2 className="funding-callout-card__title">
-              Same-Day Funding
-            </h2>
-            <p className="funding-callout-card__text">
-              We offer same-day funding of <span className="text-gradient font-bold">up to three times (3x) your average monthly income</span>. Check qualifications and submit your intake form to get started.
-            </p>
-          </div>
-          <div className="funding-callout-card__action">
-            <Button variant="primary" size="lg" href="/onboarding/business">
-              Apply Here <ArrowRight size={18} style={{ marginLeft: '8px' }} />
-            </Button>
-          </div>
-        </div>
-      </SectionWrapper>
-
-      {/* 3. FUNDING THAT WORKS FOR YOU (two-column list + founder image) */}
       <SectionWrapper id="funding-details" bg="transparent">
         <div className="page-two-col">
           <div className="page-two-col__content">
-            <h2>Funding That Works <span className="text-gradient">For You</span></h2>
+            <h2>Capital Strategy <span className="text-gradient">For Growth</span></h2>
             <p>
-              We connect entrepreneurs with the right funding solutions — whether
-              you&apos;re launching a new venture, expanding operations, or managing
-              cash flow. Our network of lenders offers competitive rates with
-              terms tailored to your business needs.
+              Funding is more than an application. Eden Prosperity helps you
+              understand what lenders and partners look for, then prepares your
+              business profile so you can pursue capital with more confidence.
             </p>
 
             <ul className="feature-list">
-              <li className="feature-list__item">
-                <BadgeDollarSign size={20} className="feature-list__icon" />
-                <span>Loans up to $20 Million</span>
-              </li>
-              <li className="feature-list__item">
-                <Clock size={20} className="feature-list__icon" />
-                <span>Same Day Approval</span>
-              </li>
-              <li className="feature-list__item">
-                <FileCheck size={20} className="feature-list__icon" />
-                <span>No Proof of Income Required</span>
-              </li>
-              <li className="feature-list__item">
-                <ShieldCheck size={20} className="feature-list__icon" />
-                <span>No Minimum Credit Score</span>
-              </li>
+              {READINESS_ITEMS.map((item) => (
+                <li className="feature-list__item" key={item}>
+                  <ShieldCheck size={20} className="feature-list__icon" />
+                  <span>{item}</span>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div className="page-two-col__media">
             <img
               src={founderImg}
-              alt="Eden Prosperity — Business Funding"
+              alt="Eden Prosperity capital readiness advisor"
               className="page-two-col__image"
             />
           </div>
         </div>
       </SectionWrapper>
 
-      {/* 4. TYPES OF LOANS (three cards) */}
-      <SectionWrapper id="loan-types" bg="surface">
-        <div className="section-header-center">
-          <h2>Types of <span className="text-gradient">Loans</span></h2>
-          <p>We offer a wide range of financing options for every stage of your business.</p>
-        </div>
-        <div className="grid-3">
-          <div className="loan-type-card">
-            <div className="loan-type-card__icon">
-              <Banknote size={28} />
-            </div>
-            <div className="loan-type-card__content">
-              <h3 className="loan-type-card__title">Term Loans</h3>
-              <p className="loan-type-card__text">
-                Traditional business loans with fixed repayment schedules. Ideal for large
-                investments, equipment purchases, or expansion projects.
-              </p>
-            </div>
-          </div>
-          <div className="loan-type-card">
-            <div className="loan-type-card__icon">
-              <CreditCard size={28} />
-            </div>
-            <div className="loan-type-card__content">
-              <h3 className="loan-type-card__title">Lines of Credit</h3>
-              <p className="loan-type-card__text">
-                Flexible revolving credit you can draw from as needed. Perfect for managing
-                cash flow, seasonal expenses, or unexpected opportunities.
-              </p>
-            </div>
-          </div>
-          <div className="loan-type-card">
-            <div className="loan-type-card__icon">
-              <Building2 size={28} />
-            </div>
-            <div className="loan-type-card__content">
-              <h3 className="loan-type-card__title">SBA Loans</h3>
-              <p className="loan-type-card__text">
-                Government-backed loans with favorable terms and lower interest rates. We
-                help you navigate the application process from start to finish.
-              </p>
-            </div>
-          </div>
-        </div>
-      </SectionWrapper>
-
-      {/* 5. FUNDING PATHWAYS (timeline layout) */}
-      <SectionWrapper id="funding-types" bg="transparent">
+      <SectionWrapper id="funding-pathways" bg="surface">
         <div className="section-header-center">
           <h2>Funding <span className="text-gradient">Pathways</span></h2>
-          <p>Multiple routes to the capital your business needs.</p>
+          <p>Practical preparation for the next stage of your business.</p>
         </div>
-        <div className="funding-timeline">
-          <div className="funding-timeline__item">
-            <div className="funding-timeline__marker">
-              <Landmark size={24} />
-            </div>
-            <div className="funding-timeline__content">
-              <h3 className="funding-timeline__title">Business Grants</h3>
-              <p className="funding-timeline__text">
-                Free money that doesn&apos;t need to be repaid. We help you find and
-                apply for grants you qualify for — including same-day options.
-              </p>
-            </div>
-          </div>
-          <div className="funding-timeline__item">
-            <div className="funding-timeline__marker">
-              <HandCoins size={24} />
-            </div>
-            <div className="funding-timeline__content">
-              <h3 className="funding-timeline__title">Revenue-Based Financing</h3>
-              <p className="funding-timeline__text">
-                Get funded based on your business revenue. Flexible same-day repayment options that scale with your monthly sales volume.
-              </p>
-            </div>
-          </div>
-          <div className="funding-timeline__item">
-            <div className="funding-timeline__marker">
-              <Handshake size={24} />
-            </div>
-            <div className="funding-timeline__content">
-              <h3 className="funding-timeline__title">Investor Matching</h3>
-              <p className="funding-timeline__text">
-                Connect with investors who believe in your vision. We help prepare
-                your pitch and match you with the right funding partners.
-              </p>
-            </div>
-          </div>
+        <div className="grid-3">
+          {PATHWAYS.map((pathway) => (
+            <article className="capital-path-card" key={pathway.title}>
+              <div className="capital-path-card__icon">{pathway.icon}</div>
+              <div className="capital-path-card__content">
+                <h3 className="capital-path-card__title">{pathway.title}</h3>
+                <p className="capital-path-card__text">{pathway.text}</p>
+              </div>
+            </article>
+          ))}
         </div>
       </SectionWrapper>
 
-      {/* 6. DOCUMENTS AND QUALIFICATIONS (two-column grid) */}
-      <SectionWrapper id="funding-qualifications" bg="surface">
+      <SectionWrapper id="funding-qualifications" bg="transparent">
         <div className="section-header-center">
-          <h2>Qualification &amp; <span className="text-gradient">Document Requirements</span></h2>
-          <p>Review the criteria and documents needed to qualify your business for funding.</p>
+          <h2>Readiness &amp; <span className="text-gradient">Document Review</span></h2>
+          <p>Bring the right details so your strategy session is productive.</p>
         </div>
-        
+
         <div className="funding-requirements-grid">
           <div className="funding-req-col">
-            <h3 className="funding-req-col__title">Criteria to Qualify</h3>
+            <h3 className="funding-req-col__title">Readiness Review</h3>
             <div className="funding-qualifications__list">
-              {QUALIFICATIONS.map((q, i) => (
-                <div key={i} className="funding-qualification-item">
-                  <ShieldCheck size={20} className="funding-qualification-item__icon" />
-                  <span>{q}</span>
+              {READINESS_ITEMS.map((item) => (
+                <div key={item} className="funding-qualification-item">
+                  <Building2 size={20} className="funding-qualification-item__icon" />
+                  <span>{item}</span>
                 </div>
               ))}
             </div>
           </div>
-          
+
           <div className="funding-req-col">
-            <h3 className="funding-req-col__title">Documents Needed</h3>
+            <h3 className="funding-req-col__title">Helpful Documents</h3>
             <div className="funding-qualifications__list">
-              {REQUIRED_DOCUMENTS.map((doc, i) => (
-                <div key={i} className="funding-qualification-item">
+              {DOCUMENTS.map((doc) => (
+                <div key={doc.label} className="funding-qualification-item">
                   <FileText size={20} className="funding-qualification-item__icon" />
                   <span>
-                    {doc.label} {!doc.required && <span className="text-muted-light">(Optional)</span>}
+                    {doc.label} {!doc.required && <span className="text-muted">(Optional)</span>}
                   </span>
                 </div>
               ))}
@@ -262,7 +167,7 @@ export default function BusinessFunding() {
 
         <div className="funding-qualifications__cta">
           <Button variant="primary" size="lg" href="/onboarding/business">
-            Start Your Application <ArrowRight size={18} />
+            Start Your Intake <ArrowRight size={18} />
           </Button>
         </div>
       </SectionWrapper>
