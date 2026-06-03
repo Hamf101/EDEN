@@ -1,108 +1,95 @@
 import SectionWrapper from '../components/ui/SectionWrapper';
 import Button from '../components/ui/Button';
-import { ShieldCheck, TrendingUp, FileSearch, AlertTriangle } from 'lucide-react';
+import { ArrowRight, CreditCard, FileSearch, ShieldCheck, TrendingUp } from 'lucide-react';
 import './CreditConsulting.css';
 
-/**
- * Credit Consulting dedicated page.
- * Unique green-accented hero with CSS score ring + horizontal process steps.
- */
+const PROCESS = [
+  {
+    icon: <FileSearch size={24} />,
+    title: 'Profile Review',
+    text: 'Review your current credit picture and identify practical opportunities to strengthen readiness.',
+  },
+  {
+    icon: <ShieldCheck size={24} />,
+    title: 'Strategy Session',
+    text: 'Build a clear plan around credit habits, documentation, business structure, and financial positioning.',
+  },
+  {
+    icon: <CreditCard size={24} />,
+    title: 'Business Credit Education',
+    text: 'Understand how business credit works and what signals help entrepreneurs prepare for funding.',
+  },
+  {
+    icon: <TrendingUp size={24} />,
+    title: 'Readiness Support',
+    text: 'Use the plan to improve organization, confidence, and capital readiness over time.',
+  },
+];
+
 export default function CreditConsulting() {
   return (
     <div className="page page--credit-consulting">
-      {/* ---- UNIQUE HERO: Split with score ring visual ---- */}
       <section className="credit-hero" id="credit-hero">
         <div className="credit-hero__inner container">
           <div className="credit-hero__content">
             <p className="credit-hero__eyebrow">Credit Consulting</p>
             <h1 className="credit-hero__title">
-              Build a Strong Credit Foundation
+              Strengthen Your Credit Foundation
             </h1>
             <p className="credit-hero__subtitle">
-              Your credit profile is the gateway to business funding. Our proven
-              strategies help clients unlock better rates, higher limits, and more
-              opportunities.
+              Your credit profile influences how your business is positioned.
+              We provide education, review, and strategic guidance to help you
+              prepare for stronger opportunities.
             </p>
             <Button variant="primary" size="lg" href="/onboarding/credit">
-              Start Your Journey
+              Start Your Consultation <ArrowRight size={18} />
             </Button>
           </div>
 
           <div className="credit-hero__score-area">
             <div className="credit-hero__score-ring">
-              <span className="credit-hero__score-number">
-                100<span className="credit-hero__score-plus">+</span>
-              </span>
+              <span className="credit-hero__score-number">14</span>
               <span className="credit-hero__score-label">
-                Average Score Increase
+                Business Day Consultation Window
               </span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ---- Process: Connected horizontal steps ---- */}
       <SectionWrapper id="credit-process" bg="surface">
         <div className="section-header-center">
-          <h2>Our <span className="text-gradient">Process</span></h2>
-          <p>A simple, structured approach to improving your credit.</p>
+          <h2>Our <span className="text-gradient">Consulting Process</span></h2>
+          <p>A structured approach to credit education and funding readiness.</p>
         </div>
         <div className="credit-steps">
-          <div className="credit-step">
-            <div className="credit-step__number">1</div>
-            <FileSearch size={24} className="credit-step__icon" />
-            <h3 className="credit-step__title">Credit Analysis</h3>
-            <p className="credit-step__text">
-              We review your full credit report and identify areas for
-              improvement, errors, and dispute opportunities.
-            </p>
-          </div>
-          <div className="credit-step">
-            <div className="credit-step__number">2</div>
-            <AlertTriangle size={24} className="credit-step__icon" />
-            <h3 className="credit-step__title">Audit &amp; Optimization</h3>
-            <p className="credit-step__text">
-              We assist with audits, guide you through optimization strategies,
-              and address negative items on your report.
-            </p>
-          </div>
-          <div className="credit-step">
-            <div className="credit-step__number">3</div>
-            <TrendingUp size={24} className="credit-step__icon" />
-            <h3 className="credit-step__title">Build &amp; Grow</h3>
-            <p className="credit-step__text">
-              We help you establish positive credit habits and build a stronger
-              credit profile for the future.
-            </p>
-          </div>
-          <div className="credit-step">
-            <div className="credit-step__number">4</div>
-            <ShieldCheck size={24} className="credit-step__icon" />
-            <h3 className="credit-step__title">Fund &amp; Thrive</h3>
-            <p className="credit-step__text">
-              With an improved score, we connect you with funding options and
-              help you start growing your business.
-            </p>
-          </div>
+          {PROCESS.map((step, index) => (
+            <article className="credit-step" key={step.title}>
+              <div className="credit-step__number">{index + 1}</div>
+              <div className="credit-step__icon">{step.icon}</div>
+              <h3 className="credit-step__title">{step.title}</h3>
+              <p className="credit-step__text">{step.text}</p>
+            </article>
+          ))}
         </div>
       </SectionWrapper>
 
-      {/* ---- Your Credit Is Your Superpower ---- */}
       <SectionWrapper id="credit-overview" bg="transparent">
         <div className="credit-overview">
           <div className="page-two-col__content">
-            <h2>Your Credit Is Your <span className="text-gradient">Superpower</span></h2>
+            <h2>Credit Readiness Is <span className="text-gradient">Business Readiness</span></h2>
             <p>
-              A strong credit score opens doors to better rates, higher limits, and more
-              options. We help you build, optimize, and leverage your credit to
-              position you for success.
+              A stronger credit foundation can support better conversations with
+              lenders, partners, and vendors. We help you understand where you
+              stand and what actions can make your business more fundable.
             </p>
             <p>
-              Our proven strategies have helped clients increase their scores by
-              100+ points, unlocking funding they never thought possible.
+              The goal is not a quick promise. It is a clear strategy,
+              education, and disciplined preparation for long-term business
+              growth.
             </p>
             <Button variant="primary" size="lg" href="/onboarding/credit">
-              Get Started
+              Begin Consultation
             </Button>
           </div>
         </div>

@@ -23,7 +23,9 @@ body {
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height-normal);
   color: var(--color-text);
-  background-color: var(--color-bg);
+  background:
+    radial-gradient(circle at 18% 0%, rgba(201, 168, 76, 0.06), transparent 26rem),
+    linear-gradient(180deg, #020403 0%, var(--color-bg) 48%, #020403 100%);
   overflow-x: hidden;
 }
 
@@ -38,7 +40,8 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: var(--font-size-5xl);
-  font-weight: var(--font-weight-extrabold);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
 }
 
 h2 {
@@ -69,6 +72,11 @@ a {
 
 a:hover {
   color: var(--color-primary-light);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold-light);
+  outline-offset: 3px;
 }
 
 /* ---- Images ---- */

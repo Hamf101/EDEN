@@ -9,40 +9,42 @@
 :root {
   /* ---- Colors: Garden of Eden Palette ---- */
   --color-primary: #C9A84C;
-  --color-primary-light: #DFC26A;
-  --color-primary-dark: #A68B3A;
+  --color-primary-light: #E0C66A;
+  --color-primary-dark: #A9832E;
   --color-primary-rgb: 201, 168, 76;
+  --color-gold-rgb: 201, 168, 76;
 
   --color-secondary: #B8B8B8;
   --color-secondary-light: #D4D4D4;
   --color-secondary-dark: #8A8A8A;
   --color-secondary-rgb: 184, 184, 184;
 
-  --color-dark: #0A0A0A;
-  --color-dark-surface: #111111;
-  --color-dark-elevated: #1A1A1A;
-  --color-dark-rgb: 10, 10, 10;
+  --color-dark: #020C06;
+  --color-dark-surface: #05140A;
+  --color-dark-elevated: #092011;
+  --color-dark-rgb: 2, 12, 6;
 
-  --color-white: #F0EBE0;
-  --color-white-rgb: 240, 235, 224;
-  --color-light: #1A1A1A;
-  --color-muted: #6B6555;
-  --color-muted-light: #8A8170;
+  --color-white: #F3ECDD;
+  --color-white-rgb: 243, 236, 221;
+  --color-light: #0E1B12;
+  --color-muted: #756F61;
+  --color-muted-light: #9A927F;
 
   /* Page backgrounds (dark mode) */
-  --color-bg: #0A0A0A;
-  --color-bg-alt: #0E0E0E;
-  --color-bg-surface: #151515;
-  --color-bg-rgb: 10, 10, 10;
+  --color-bg: #020C06;
+  --color-bg-alt: #041209;
+  --color-bg-surface: #06180C;
+  --color-bg-rgb: 2, 12, 6;
 
   /* Text on dark backgrounds */
-  --color-text: #F0EBE0;
-  --color-text-secondary: #A09880;
-  --color-text-muted: #6B6555;
+  --color-text: #F3ECDD;
+  --color-text-secondary: #C5BEA9;
+  --color-text-muted: #837C69;
 
   /* Borders on dark backgrounds */
-  --color-border: rgba(201, 168, 76, 0.15);
-  --color-border-light: rgba(201, 168, 76, 0.08);
+  --color-border: rgba(201, 168, 76, 0.18);
+  --color-border-light: rgba(201, 168, 76, 0.1);
+  --color-border-strong: rgba(201, 168, 76, 0.42);
 
   --color-accent: #C9A84C;
   --color-accent-light: #DFC26A;
@@ -51,8 +53,8 @@
 
   /* Eden-specific tokens */
   --color-gold: #C9A84C;
-  --color-gold-light: #DFC26A;
-  --color-gold-dark: #A68B3A;
+  --color-gold-light: #E0C66A;
+  --color-gold-dark: #A9832E;
   --color-gold-glow: rgba(201, 168, 76, 0.3);
   --color-silver: #B8B8B8;
   --color-silver-light: #D4D4D4;
@@ -109,17 +111,18 @@
   --space-32: 8rem;     /* 128px */
 
   /* ---- Layout ---- */
-  --max-width: 1200px;
+  --max-width: 1280px;
   --max-width-narrow: 800px;
   --max-width-wide: 1400px;
+  --container-md: 960px;
   --nav-height: 72px;
   --section-padding: var(--space-24) var(--space-6);
 
   /* ---- Border Radius ---- */
-  --radius-sm: 6px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
-  --radius-xl: 28px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 8px;
   --radius-full: 9999px;
 
   /* ---- Shadows ---- */
@@ -132,6 +135,7 @@
   --shadow-glow-secondary-sm: 0 0 12px rgba(var(--color-secondary-rgb), 0.15);
   --shadow-gold-glow: 0 0 30px rgba(201, 168, 76, 0.25);
   --shadow-gold-glow-sm: 0 0 15px rgba(201, 168, 76, 0.15);
+  --shadow-panel: 0 24px 80px rgba(0, 0, 0, 0.42);
 
   /* ---- Transitions ---- */
   --transition-fast: 150ms ease;

@@ -5,22 +5,22 @@ import { ShieldCheck, FileText, Upload, Building2 } from 'lucide-react';
 import './BusinessOnboarding.css';
 
 /**
- * Business Funding onboarding intake form.
- * Collects qualifications, documents, and client info for loan processing.
+ * Business capital readiness intake form.
+ * Collects readiness details, documents, and client information.
  */
 
 const QUALIFICATIONS = [
   'Business operating for at least 12 months',
   'No prior defaults',
   'No UCC liens attached to you',
-  'Generating at least $100K/month in revenue',
-  'If you have a website, please attach it',
+  'Revenue details available for review',
+  'Website or brand presence available if applicable',
 ];
 
 const REQUIRED_DOCUMENTS = [
   { label: '3 months business bank statements', required: true },
-  { label: 'PROOF of ownership ID', required: true },
-  { label: 'Social Security Number (Social)', required: true },
+  { label: 'Proof of business ownership', required: true },
+  { label: 'Owner identification details', required: true },
   { label: 'Latest business tax return (if you have it, not required)', required: false },
   { label: 'POS system latest transaction report (if you have a POS system)', required: false },
 ];
@@ -56,11 +56,11 @@ export default function BusinessOnboarding() {
         <div className="onboarding-hero__inner container">
           <Building2 size={40} className="onboarding-hero__icon" />
           <h1 className="onboarding-hero__title">
-            Business Funding <span className="text-gradient">Onboarding</span>
+            Capital Readiness <span className="text-gradient">Intake</span>
           </h1>
           <p className="onboarding-hero__subtitle">
-            Complete the intake form below to get started with your business funding application.
-            Please review the qualifications before proceeding.
+            Complete the intake form below so we can review your business,
+            documents, and funding readiness goals.
           </p>
         </div>
       </section>
@@ -69,7 +69,7 @@ export default function BusinessOnboarding() {
       <SectionWrapper id="funding-requirements" bg="surface">
         <div className="section-header-center" style={{ marginBottom: 'var(--space-8)' }}>
           <h2>Qualification &amp; <span className="text-gradient">Document Requirements</span></h2>
-          <p>Review the criteria and documents needed to qualify your business for funding before submitting the form.</p>
+          <p>Review the details and documents that help us prepare your strategy session.</p>
         </div>
         
         <div className="funding-requirements-grid">
@@ -106,7 +106,7 @@ export default function BusinessOnboarding() {
         <div className="onboarding-form-wrapper">
           <h2>Intake <span className="text-gradient">Form</span></h2>
           <p className="onboarding-form-subtitle">
-            Fill out the form below to begin your business funding application.
+            Fill out the form below to begin your capital readiness intake.
           </p>
 
           <form className="onboarding-form" onSubmit={handleSubmit}>
@@ -257,7 +257,7 @@ export default function BusinessOnboarding() {
                 name="message"
                 className="onboarding-form__input onboarding-form__textarea"
                 rows="4"
-                placeholder="Tell us more about your business and funding needs..."
+                placeholder="Tell us more about your business and capital readiness goals..."
                 value={formData.message}
                 onChange={handleChange}
               />
@@ -281,7 +281,7 @@ export default function BusinessOnboarding() {
                 </label>
                 <label className="onboarding-form__upload-item">
                   <Upload size={20} />
-                  <span>PROOF of ownership ID *</span>
+                  <span>Proof of business ownership *</span>
                   <input
                     type="file"
                     accept=".pdf,.jpg,.png"
@@ -292,12 +292,12 @@ export default function BusinessOnboarding() {
                 </label>
                 <label className="onboarding-form__upload-item">
                   <Upload size={20} />
-                  <span>Social Security Card/ID *</span>
+                  <span>Owner identification details *</span>
                   <input
                     type="file"
                     accept=".pdf,.jpg,.png"
                     className="onboarding-form__upload-input"
-                    aria-label="Upload Social Security ID"
+                    aria-label="Upload owner identification details"
                     required
                   />
                 </label>
@@ -325,7 +325,7 @@ export default function BusinessOnboarding() {
             </div>
 
             <Button variant="primary" size="lg" type="submit">
-              Submit Application
+              Submit Intake
             </Button>
           </form>
         </div>

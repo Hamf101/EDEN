@@ -5,36 +5,33 @@ import { BookOpen, Users, Award } from 'lucide-react';
 import './Courses.css';
 
 /**
- * Courses dedicated page.
- * Unique warm-amber hero with learning stats + full course listing.
+ * Programs dedicated page.
  */
 export default function Courses() {
   return (
     <div className="page page--courses">
-      {/* ---- UNIQUE HERO: Warm amber with learning stats ---- */}
       <section className="courses-hero" id="courses-hero">
         <div className="courses-hero__inner container">
           <h1 className="courses-hero__title">
-            Level Up Your{' '}
-            <span className="text-gradient">Financial Knowledge</span>
+            Entrepreneur <span className="text-gradient">Programs</span>
           </h1>
           <p className="courses-hero__subtitle">
-            Comprehensive courses designed to help you build wealth, grow your
-            business, and create lasting financial freedom.
+            Structured consulting programs that help entrepreneurs build credit
+            readiness, funding strategy, business systems, and long-term growth.
           </p>
 
           <div className="courses-hero__stats">
             <div className="courses-hero__stat">
               <BookOpen size={20} />
-              <span>{courses.length} Courses</span>
+              <span>{courses.length} Programs</span>
             </div>
             <div className="courses-hero__stat">
               <Users size={20} />
-              <span>Self-Paced Learning</span>
+              <span>Personalized Guidance</span>
             </div>
             <div className="courses-hero__stat">
               <Award size={20} />
-              <span>Expert-Led Content</span>
+              <span>Business Readiness</span>
             </div>
           </div>
         </div>
@@ -42,7 +39,7 @@ export default function Courses() {
 
       {/* ---- Course Listing ---- */}
       <SectionWrapper id="all-courses" bg="transparent">
-        <div className="grid-3">
+        <div className="courses-grid">
           {courses.map((course) => (
             <CourseCard key={course.id} {...course} />
           ))}

@@ -15,7 +15,7 @@ const navLinks = [
   { to: '/credit-consulting', label: 'Credit Consulting' },
   { to: '/courses', label: 'Programs' },
   { to: '/testimonials', label: 'Testimonials' },
-  { to: '/contact', label: 'Contact Us' },
+  { to: '/contact', label: 'Contact' },
 ];
 
 export default function Navbar() {
@@ -66,6 +66,10 @@ export default function Navbar() {
             ))}
           </nav>
 
+          <Link to="/onboarding/business" className="navbar__cta">
+            Apply Now
+          </Link>
+
           {/* Mobile Hamburger */}
           <button
             className="navbar__hamburger"
@@ -99,7 +103,7 @@ export default function Navbar() {
             </NavLink>
           ))}
           <Link
-            to="/contact"
+            to="/onboarding/business"
             className="navbar__mobile-cta"
             onClick={closeMobile}
           >
