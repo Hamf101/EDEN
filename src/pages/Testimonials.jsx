@@ -8,13 +8,13 @@ import './Testimonials.css';
 /**
  * Testimonials dedicated page.
  * Features a dark hero with a featured pull-quote,
- * plus a tabbed listing for Credit Repair vs Business Funding testimonials.
+ * plus a tabbed listing for Credit Consulting vs Business Funding testimonials.
  */
 
 const TABS = [
   { id: 'all', label: 'All Testimonials' },
-  { id: 'credit-repair', label: 'Credit Repair' },
-  { id: 'business-funding', label: 'Business Funding' },
+  { id: 'credit-consulting', label: 'Credit Consulting' },
+  { id: 'business-funding', label: 'Business Funding Qualifications' },
 ];
 
 export default function Testimonials() {

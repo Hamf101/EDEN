@@ -56,20 +56,37 @@
   box-shadow: 0 0 6px var(--color-gold-glow);
 }
 
-/* ---- Responsive: Hide on small screens ---- */
+/* ---- Responsive: Show vines and lights subtly on mobile ---- */
 @media (max-width: 768px) {
   .vine-svg {
-    width: 40px;
-    opacity: 0.35;
+    width: 32px;
+    opacity: 0.3;
   }
 
   .vine-particles {
-    display: none;
+    opacity: 0.4 !important;
   }
 }
 
 @media (max-width: 480px) {
   .vine-overlay {
-    display: none;
+    display: block;
+  }
+
+  .vine-svg {
+    width: 24px;
+    opacity: 0.25;
+  }
+
+  .vine-svg--left {
+    left: -4px;
+  }
+
+  .vine-svg--right {
+    right: -4px;
+  }
+
+  .vine-particles {
+    opacity: 0.3 !important;
   }
 }

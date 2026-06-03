@@ -30,10 +30,9 @@ import './Footer.css';
  * Four-column layout: Brand, Services, Company, Newsletter.
  */
 const serviceLinks = [
-  { to: '/business-loans', label: 'Business Loans' },
   { to: '/business-funding', label: 'Business Funding' },
-  { to: '/credit-repair', label: 'Credit Repair' },
-  { to: '/courses', label: 'Courses' },
+  { to: '/credit-consulting', label: 'Credit Consulting' },
+  { to: '/courses', label: 'Programs' },
 ];
 
 const companyLinks = [
@@ -81,7 +80,7 @@ export default function Footer() {
               <InstagramIcon size={18} />
             </a>
             <a
-              href="mailto:eden@prosperitygroupllc.net"
+              href="mailto:Eden@ProsperityGroupLLC.net"
               className="footer__social-link"
               aria-label="Email"
             >

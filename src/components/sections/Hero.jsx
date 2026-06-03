@@ -23,7 +23,7 @@ export default function Hero() {
             <Button variant="primary" size="lg" href="/onboarding/business">
               Apply Now
             </Button>
-            <Button variant="secondary" size="lg" href="/business-loans">
+            <Button variant="secondary" size="lg" href="/business-funding">
               Learn More
             </Button>
           </div>

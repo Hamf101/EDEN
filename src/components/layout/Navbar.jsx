@@ -11,10 +11,9 @@ import './Navbar.css';
  */
 const navLinks = [
   { to: '/', label: 'Home' },
-  { to: '/business-loans', label: 'Business Loans' },
   { to: '/business-funding', label: 'Business Funding' },
-  { to: '/credit-repair', label: 'Credit Repair' },
-  { to: '/courses', label: 'Courses' },
+  { to: '/credit-consulting', label: 'Credit Consulting' },
+  { to: '/courses', label: 'Programs' },
   { to: '/testimonials', label: 'Testimonials' },
   { to: '/contact', label: 'Contact Us' },
 ];
@@ -36,47 +35,49 @@ export default function Navbar() {
   const closeMobile = () => setIsMobileOpen(false);
 
   return (
-    <header
-      className={`navbar ${isScrolled ? 'navbar--scrolled' : ''}`}
-      id="main-navbar"
-    >
-      <div className="navbar__inner container">
-        {/* Logo */}
-        <Link to="/" className="navbar__logo" onClick={closeMobile}>
-          <img src={logoImg} alt="Eden Prosperity Logo" className="navbar__logo-img" />
-          <div className="navbar__logo-text-wrapper">
-            <span className="navbar__logo-text">Eden</span>
-            <span className="navbar__logo-accent">Prosperity</span>
-          </div>
-        </Link>
+    <>
+      <header
+        className={`navbar ${isScrolled ? 'navbar--scrolled' : ''}`}
+        id="main-navbar"
+      >
+        <div className="navbar__inner container">
+          {/* Logo */}
+          <Link to="/" className="navbar__logo" onClick={closeMobile}>
+            <img src={logoImg} alt="Eden Prosperity Logo" className="navbar__logo-img" />
+            <div className="navbar__logo-text-wrapper">
+              <span className="navbar__logo-text">Eden</span>
+              <span className="navbar__logo-accent">Prosperity</span>
+            </div>
+          </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="navbar__nav" id="desktop-nav">
-          {navLinks.map((link) => (
-            <NavLink
-              key={link.to}
-              to={link.to}
-              end={link.to === '/'}
-              className={({ isActive }) =>
-                `navbar__link ${isActive ? 'navbar__link--active' : ''}`
-              }
-            >
-              {link.label}
-            </NavLink>
-          ))}
-        </nav>
+          {/* Desktop Navigation */}
+          <nav className="navbar__nav" id="desktop-nav">
+            {navLinks.map((link) => (
+              <NavLink
+                key={link.to}
+                to={link.to}
+                end={link.to === '/'}
+                className={({ isActive }) =>
+                  `navbar__link ${isActive ? 'navbar__link--active' : ''}`
+                }
+              >
+                {link.label}
+              </NavLink>
+            ))}
+          </nav>
 
-        {/* Mobile Hamburger */}
-        <button
-          className="navbar__hamburger"
-          onClick={() => setIsMobileOpen(!isMobileOpen)}
-          aria-label={isMobileOpen ? 'Close menu' : 'Open menu'}
-          aria-expanded={isMobileOpen}
-          id="mobile-menu-toggle"
-        >
-          {isMobileOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
+          {/* Mobile Hamburger */}
+          <button
+            className="navbar__hamburger"
+            onClick={() => setIsMobileOpen(!isMobileOpen)}
+            aria-label={isMobileOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isMobileOpen}
+            id="mobile-menu-toggle"
+          >
+            {isMobileOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+      </header>
 
       {/* Mobile Menu */}
       <div
@@ -106,6 +107,6 @@ export default function Navbar() {
           </Link>
         </nav>
       </div>
-    </header>
+    </>
   );
 }

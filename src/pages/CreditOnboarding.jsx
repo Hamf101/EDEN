@@ -5,7 +5,7 @@ import { ShieldCheck, Upload, CreditCard, Lock, DollarSign } from 'lucide-react'
 import './CreditOnboarding.css';
 
 /**
- * Credit Repair client onboarding form.
+ * Credit Consulting client onboarding form.
  * Collects login credentials, ID, address, and payment proof.
  */
 
@@ -48,10 +48,10 @@ export default function CreditOnboarding() {
         <div className="onboarding-hero__inner container">
           <CreditCard size={40} className="onboarding-hero__icon" />
           <h1 className="onboarding-hero__title">
-            Credit Repair <span className="text-gradient">Onboarding</span>
+            Credit Consulting <span className="text-gradient">Onboarding</span>
           </h1>
           <p className="onboarding-hero__subtitle">
-            Complete the form below to begin your credit repair journey.
+            Complete the form below to begin your credit consulting journey.
             All information is kept strictly confidential.
           </p>
         </div>

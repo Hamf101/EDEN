@@ -9,24 +9,24 @@ import './ServicesOverview.css';
 const services = [
   {
     icon: <Banknote size={28} />,
-    title: 'Business Loans',
-    description:
-      'Access capital to grow your business with competitive rates and flexible terms. Same day approval available with loans up to $20 million.',
-    to: '/business-loans',
-  },
-  {
-    icon: <TrendingUp size={28} />,
     title: 'Business Funding',
     description:
-      'Explore diverse funding options including grants, lines of credit, and alternative financing solutions tailored for entrepreneurs.',
+      'Access capital to grow your business with same-day approval. Explore loans up to $20M, revenue-based funding, grants, and investor matching pathways.',
     to: '/business-funding',
   },
   {
     icon: <ShieldCheck size={28} />,
-    title: 'Credit Repair',
+    title: 'Credit Consulting',
     description:
-      'Build a strong credit foundation. We help you improve your credit profile and create a pathway to better funding opportunities.',
-    to: '/credit-repair',
+      'Build a strong credit foundation. We help you optimize your credit profile and create a pathway to better funding opportunities.',
+    to: '/credit-consulting',
+  },
+  {
+    icon: <TrendingUp size={28} />,
+    title: 'Programs & Packages',
+    description:
+      'Accelerate your success with our Business Mentor packages and Credit Consulting programs designed to scale your financial growth.',
+    to: '/courses',
   },
 ];
 

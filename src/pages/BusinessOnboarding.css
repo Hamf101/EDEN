@@ -34,98 +34,44 @@
   line-height: var(--line-height-relaxed);
 }
 
-/* ---- Qualifications ---- */
-.onboarding-qualifications {
-  max-width: 700px;
+/* ---- Qualifications & Documents Requirements ---- */
+.funding-requirements-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  max-width: var(--container-md);
   margin: 0 auto;
 }
 
-.onboarding-qualifications__header {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  margin-bottom: var(--space-3);
-}
-
-.onboarding-qualifications__alert-icon {
+.funding-req-col__title {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-lg);
   color: var(--color-gold);
+  margin-bottom: var(--space-4);
+  text-align: center;
 }
 
-.onboarding-qualifications__subtitle {
-  color: var(--color-text-secondary);
-  margin-bottom: var(--space-6);
-}
-
-.onboarding-qualifications__list {
+.funding-qualifications__list {
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
 }
 
-.onboarding-qualifications__item {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  font-size: var(--font-size-base);
-  color: var(--color-text);
-  padding: var(--space-3) var(--space-4);
-  background: var(--color-dark-elevated);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-}
-
-.onboarding-qualifications__check {
-  color: var(--color-gold);
-  flex-shrink: 0;
-}
-
-/* ---- Documents ---- */
-.onboarding-docs {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.onboarding-docs__subtitle {
-  color: var(--color-text-secondary);
-  margin-top: var(--space-3);
-  margin-bottom: var(--space-8);
-}
-
-.onboarding-docs__grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-4);
-}
-
-.onboarding-doc-card {
+.funding-qualification-item {
   display: flex;
   align-items: center;
   gap: var(--space-3);
   padding: var(--space-4) var(--space-5);
-  background: var(--color-dark-surface);
+  background: var(--color-dark-elevated);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  text-align: left;
+  font-size: var(--font-size-base);
+  color: var(--color-text);
 }
 
-.onboarding-doc-card__icon {
+.funding-qualification-item__icon {
   color: var(--color-gold);
   flex-shrink: 0;
-}
-
-.onboarding-doc-card__label {
-  font-size: var(--font-size-sm);
-  color: var(--color-text);
-  flex: 1;
-}
-
-.onboarding-doc-card__optional {
-  font-size: var(--font-size-xs);
-  color: var(--color-text-muted);
-  padding: var(--space-1) var(--space-2);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
 }
 
 /* ---- Form Wrapper ---- */
@@ -273,8 +219,9 @@
     grid-template-columns: 1fr;
   }
 
-  .onboarding-docs__grid {
+  .funding-requirements-grid {
     grid-template-columns: 1fr;
+    gap: var(--space-6);
   }
 
   .onboarding-form__upload-grid {

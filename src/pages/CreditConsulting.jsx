@@ -1,20 +1,20 @@
 import SectionWrapper from '../components/ui/SectionWrapper';
 import Button from '../components/ui/Button';
 import { ShieldCheck, TrendingUp, FileSearch, AlertTriangle } from 'lucide-react';
-import './CreditRepair.css';
+import './CreditConsulting.css';
 
 /**
- * Credit Repair dedicated page.
+ * Credit Consulting dedicated page.
  * Unique green-accented hero with CSS score ring + horizontal process steps.
  */
-export default function CreditRepair() {
+export default function CreditConsulting() {
   return (
-    <div className="page page--credit-repair">
+    <div className="page page--credit-consulting">
       {/* ---- UNIQUE HERO: Split with score ring visual ---- */}
       <section className="credit-hero" id="credit-hero">
         <div className="credit-hero__inner container">
           <div className="credit-hero__content">
-            <p className="credit-hero__eyebrow">Credit Repair</p>
+            <p className="credit-hero__eyebrow">Credit Consulting</p>
             <h1 className="credit-hero__title">
               Build a Strong Credit Foundation
             </h1>
@@ -60,10 +60,10 @@ export default function CreditRepair() {
           <div className="credit-step">
             <div className="credit-step__number">2</div>
             <AlertTriangle size={24} className="credit-step__icon" />
-            <h3 className="credit-step__title">Dispute &amp; Repair</h3>
+            <h3 className="credit-step__title">Audit &amp; Optimization</h3>
             <p className="credit-step__text">
-              We file disputes, negotiate with creditors, and work to remove
-              negative items from your report.
+              We assist with audits, guide you through optimization strategies,
+              and address negative items on your report.
             </p>
           </div>
           <div className="credit-step">
@@ -94,14 +94,14 @@ export default function CreditRepair() {
             <h2>Your Credit Is Your <span className="text-gradient">Superpower</span></h2>
             <p>
               A strong credit score opens doors to better rates, higher limits, and more
-              options. We help you build, repair, and leverage your credit to
+              options. We help you build, optimize, and leverage your credit to
               position you for success.
             </p>
             <p>
               Our proven strategies have helped clients increase their scores by
               100+ points, unlocking funding they never thought possible.
             </p>
-            <Button variant="primary" size="lg" href="/contact">
+            <Button variant="primary" size="lg" href="/onboarding/credit">
               Get Started
             </Button>
           </div>

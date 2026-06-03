@@ -2,9 +2,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import ScrollToTop from './components/utils/ScrollToTop';
 import Home from './pages/Home';
-import BusinessLoans from './pages/BusinessLoans';
 import BusinessFunding from './pages/BusinessFunding';
-import CreditRepair from './pages/CreditRepair';
+import CreditConsulting from './pages/CreditConsulting';
 import Courses from './pages/Courses';
 import Testimonials from './pages/Testimonials';
 import Contact from './pages/Contact';
@@ -22,9 +21,8 @@ export default function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
-          <Route path="/business-loans" element={<BusinessLoans />} />
           <Route path="/business-funding" element={<BusinessFunding />} />
-          <Route path="/credit-repair" element={<CreditRepair />} />
+          <Route path="/credit-consulting" element={<CreditConsulting />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/contact" element={<Contact />} />
@@ -35,3 +33,4 @@ export default function App() {
     </BrowserRouter>
   );
 }
+

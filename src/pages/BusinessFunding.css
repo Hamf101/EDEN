@@ -3,62 +3,138 @@
    ============================================ */
 
 /* ---- Hero ---- */
-.funding-hero {
+.funding-hero-loans {
   padding: calc(var(--nav-height) + var(--space-20)) var(--space-6) var(--space-16);
-  text-align: center;
   background: radial-gradient(
-    ellipse at 50% 60%,
+    ellipse at 30% 50%,
     rgba(var(--color-primary-rgb), 0.06) 0%,
     var(--color-bg) 60%
   );
 }
 
-.funding-hero__inner {
-  max-width: 700px;
-  margin: 0 auto;
+.loans-hero__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
 }
 
-.funding-hero__title {
+.loans-hero__content {
+  text-align: center;
+}
+
+.loans-hero__eyebrow {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gold);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-widest);
+  margin-bottom: var(--space-3);
+}
+
+.loans-hero__title {
   font-family: var(--font-family-heading);
   margin-bottom: var(--space-4);
 }
 
-.funding-hero__subtitle {
+.loans-hero__subtitle {
   font-size: var(--font-size-lg);
   color: var(--color-text-secondary);
-  margin-bottom: var(--space-8);
+  max-width: 600px;
+  margin: 0 auto var(--space-6);
 }
 
-.funding-hero__paths {
+.loans-hero__stats {
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: var(--space-4);
-  margin-bottom: var(--space-8);
+  gap: var(--space-6);
+  margin-top: var(--space-6);
   flex-wrap: wrap;
 }
 
-.funding-hero__path {
+.loans-hero__stat-card {
   display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
-  color: var(--color-text);
-  padding: var(--space-2) var(--space-4);
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-5) var(--space-6);
   background: var(--color-dark-surface);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-md);
+  text-align: center;
+  min-width: 160px;
 }
 
-.funding-hero__path svg {
+.loans-hero__stat-value {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
   color: var(--color-gold);
 }
 
-.funding-hero__path-connector {
-  width: 24px;
-  height: 1px;
-  background: var(--color-border);
+.loans-hero__stat-label {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+/* ---- Loan Type Cards ---- */
+.loan-type-card {
+  display: flex;
+  gap: var(--space-5);
+  padding: var(--space-6);
+  background: var(--color-dark-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.loan-type-card:hover {
+  border-color: rgba(var(--color-primary-rgb), 0.3);
+  box-shadow: var(--shadow-gold-glow-sm);
+}
+
+.loan-type-card__icon {
+  color: var(--color-gold);
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(var(--color-primary-rgb), 0.1);
+  border-radius: var(--radius-md);
+}
+
+.loan-type-card__title {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+
+.loan-type-card__text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+}
+
+/* ---- Details Portrait ---- */
+.page--business-funding #funding-details .page-two-col__media {
+  overflow: visible;
+}
+
+.page--business-funding #funding-details .page-two-col__image {
+  width: 100%;
+  max-width: 100%;
+  transform: none;
+  filter: drop-shadow(1px 0 0 rgba(245, 222, 132, 0.98))
+          drop-shadow(-1px 0 0 rgba(245, 222, 132, 0.9))
+          drop-shadow(0 1px 0 rgba(245, 222, 132, 0.86))
+          drop-shadow(0 -1px 0 rgba(245, 222, 132, 0.78))
+          drop-shadow(0 0 14px rgba(245, 222, 132, 0.52))
+          drop-shadow(0 0 36px rgba(201, 168, 76, 0.4));
 }
 
 /* ---- Timeline ---- */
@@ -124,13 +200,27 @@
   line-height: var(--line-height-relaxed);
 }
 
-/* ---- Qualifications ---- */
+/* ---- Qualifications & Documents Requirements ---- */
+.funding-requirements-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  max-width: var(--container-md);
+  margin: 0 auto;
+}
+
+.funding-req-col__title {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-lg);
+  color: var(--color-gold);
+  margin-bottom: var(--space-4);
+  text-align: center;
+}
+
 .funding-qualifications__list {
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
-  max-width: 700px;
-  margin: 0 auto;
 }
 
 .funding-qualification-item {
@@ -155,25 +245,77 @@
   margin-top: var(--space-10);
 }
 
-/* ---- Overview ---- */
-.funding-overview {
-  max-width: 760px;
+/* ---- Same-Day Funding Callout Card ---- */
+.funding-callout-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-8);
+  padding: var(--space-8) var(--space-10);
+  background: linear-gradient(135deg, rgba(var(--color-primary-rgb), 0.08) 0%, rgba(var(--color-dark-rgb), 0.4) 100%);
+  border: 1px solid rgba(var(--color-gold-rgb), 0.3);
+  border-radius: var(--radius-xl);
+  max-width: var(--container-md);
   margin: 0 auto;
+  box-shadow: var(--shadow-gold-glow-sm);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
+.funding-callout-card__content {
+  flex: 1;
+}
+
+.funding-callout-card__title {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--space-2);
+  color: var(--color-gold);
+}
+
+.funding-callout-card__text {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+}
+
+.funding-callout-card__action {
+  flex-shrink: 0;
+}
+
+/* Responsive Callout Card */
 @media (max-width: 768px) {
-  .funding-hero {
+  .funding-callout-card {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--space-6) var(--space-6);
+    gap: var(--space-6);
+  }
+  
+  .funding-callout-card__action {
+    width: 100%;
+  }
+
+  .funding-callout-card__action > a {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Responsive Grid and Timeline */
+@media (max-width: 768px) {
+  .funding-hero-loans {
     padding-left: var(--space-4);
     padding-right: var(--space-4);
   }
 
-  .funding-hero__paths {
-    flex-direction: column;
+  .loans-hero__stat-card {
+    min-width: 120px;
   }
 
-  .funding-hero__path-connector {
-    width: 1px;
-    height: 16px;
+  .funding-requirements-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
   }
 }
 

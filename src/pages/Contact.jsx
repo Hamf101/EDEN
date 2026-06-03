@@ -44,13 +44,13 @@ export default function Contact() {
 
           <div className="contact-hero__cards">
             <a
-              href="mailto:eden@prosperitygroupllc.net"
+              href="mailto:Eden@ProsperityGroupLLC.net"
               className="contact-hero__card"
             >
               <Mail size={24} className="contact-hero__card-icon" />
               <span className="contact-hero__card-label">Email</span>
               <span className="contact-hero__card-value">
-                eden@prosperitygroupllc.net
+                Eden@ProsperityGroupLLC.net
               </span>
             </a>
 
@@ -128,9 +128,8 @@ export default function Contact() {
                 </label>
                 <select id="contact-service" className="contact-form__input">
                   <option value="">Select a service...</option>
-                  <option value="business-loans">Business Loans</option>
                   <option value="business-funding">Business Funding</option>
-                  <option value="credit-repair">Credit Repair</option>
+                  <option value="credit-consulting">Credit Consulting</option>
                   <option value="courses">Courses</option>
                   <option value="other">Other</option>
                 </select>

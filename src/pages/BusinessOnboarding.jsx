@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import SectionWrapper from '../components/ui/SectionWrapper';
 import Button from '../components/ui/Button';
-import { ShieldCheck, FileText, Upload, Building2, AlertTriangle } from 'lucide-react';
+import { ShieldCheck, FileText, Upload, Building2 } from 'lucide-react';
 import './BusinessOnboarding.css';
 
 /**
@@ -18,12 +18,11 @@ const QUALIFICATIONS = [
 ];
 
 const REQUIRED_DOCUMENTS = [
-  { label: 'Three months business bank statements', required: true },
-  { label: 'Proof of ownership (EIN Letter)', required: true },
-  { label: 'Social Security Number', required: true },
-  { label: 'Government-issued ID', required: true },
-  { label: 'Latest business tax return', required: false },
-  { label: 'Latest credit card transaction report (if applicable)', required: false },
+  { label: '3 months business bank statements', required: true },
+  { label: 'PROOF of ownership ID', required: true },
+  { label: 'Social Security Number (Social)', required: true },
+  { label: 'Latest business tax return (if you have it, not required)', required: false },
+  { label: 'POS system latest transaction report (if you have a POS system)', required: false },
 ];
 
 export default function BusinessOnboarding() {
@@ -66,44 +65,38 @@ export default function BusinessOnboarding() {
         </div>
       </section>
 
-      {/* ---- Qualifications ---- */}
-      <SectionWrapper id="qualifications" bg="surface">
-        <div className="onboarding-qualifications">
-          <div className="onboarding-qualifications__header">
-            <AlertTriangle size={24} className="onboarding-qualifications__alert-icon" />
-            <h2>Qualification Requirements</h2>
-          </div>
-          <p className="onboarding-qualifications__subtitle">
-            To qualify for our Business Funding program, you must meet the following criteria:
-          </p>
-          <ul className="onboarding-qualifications__list">
-            {QUALIFICATIONS.map((q, i) => (
-              <li key={i} className="onboarding-qualifications__item">
-                <ShieldCheck size={18} className="onboarding-qualifications__check" />
-                <span>{q}</span>
-              </li>
-            ))}
-          </ul>
+      {/* ---- Qualifications & Documents ---- */}
+      <SectionWrapper id="funding-requirements" bg="surface">
+        <div className="section-header-center" style={{ marginBottom: 'var(--space-8)' }}>
+          <h2>Qualification &amp; <span className="text-gradient">Document Requirements</span></h2>
+          <p>Review the criteria and documents needed to qualify your business for funding before submitting the form.</p>
         </div>
-      </SectionWrapper>
-
-      {/* ---- Required Documents ---- */}
-      <SectionWrapper id="required-docs" bg="transparent">
-        <div className="onboarding-docs">
-          <h2>Required <span className="text-gradient">Documents</span></h2>
-          <p className="onboarding-docs__subtitle">
-            Please have the following documents ready for upload:
-          </p>
-          <div className="onboarding-docs__grid">
-            {REQUIRED_DOCUMENTS.map((doc, i) => (
-              <div key={i} className="onboarding-doc-card">
-                <FileText size={20} className="onboarding-doc-card__icon" />
-                <span className="onboarding-doc-card__label">{doc.label}</span>
-                {!doc.required && (
-                  <span className="onboarding-doc-card__optional">Optional</span>
-                )}
-              </div>
-            ))}
+        
+        <div className="funding-requirements-grid">
+          <div className="funding-req-col">
+            <h3 className="funding-req-col__title">Criteria to Qualify</h3>
+            <div className="funding-qualifications__list">
+              {QUALIFICATIONS.map((q, i) => (
+                <div key={i} className="funding-qualification-item">
+                  <ShieldCheck size={20} className="funding-qualification-item__icon" />
+                  <span>{q}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          <div className="funding-req-col">
+            <h3 className="funding-req-col__title">Documents Needed</h3>
+            <div className="funding-qualifications__list">
+              {REQUIRED_DOCUMENTS.map((doc, i) => (
+                <div key={i} className="funding-qualification-item">
+                  <FileText size={20} className="funding-qualification-item__icon" />
+                  <span>
+                    {doc.label} {!doc.required && <span className="text-muted-light">(Optional)</span>}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </SectionWrapper>
@@ -276,33 +269,36 @@ export default function BusinessOnboarding() {
               <div className="onboarding-form__upload-grid">
                 <label className="onboarding-form__upload-item">
                   <Upload size={20} />
-                  <span>Bank Statements (3 months)</span>
+                  <span>Bank Statements (3 months) *</span>
                   <input
                     type="file"
                     accept=".pdf,.jpg,.png"
                     multiple
                     className="onboarding-form__upload-input"
                     aria-label="Upload Bank Statements"
+                    required
                   />
                 </label>
                 <label className="onboarding-form__upload-item">
                   <Upload size={20} />
-                  <span>EIN Letter</span>
+                  <span>PROOF of ownership ID *</span>
                   <input
                     type="file"
                     accept=".pdf,.jpg,.png"
                     className="onboarding-form__upload-input"
-                    aria-label="Upload EIN Letter"
+                    aria-label="Upload Proof of Ownership ID"
+                    required
                   />
                 </label>
                 <label className="onboarding-form__upload-item">
                   <Upload size={20} />
-                  <span>Government ID</span>
+                  <span>Social Security Card/ID *</span>
                   <input
                     type="file"
                     accept=".pdf,.jpg,.png"
                     className="onboarding-form__upload-input"
-                    aria-label="Upload Government ID"
+                    aria-label="Upload Social Security ID"
+                    required
                   />
                 </label>
                 <label className="onboarding-form__upload-item">
@@ -313,6 +309,16 @@ export default function BusinessOnboarding() {
                     accept=".pdf,.jpg,.png"
                     className="onboarding-form__upload-input"
                     aria-label="Upload Tax Return"
+                  />
+                </label>
+                <label className="onboarding-form__upload-item">
+                  <Upload size={20} />
+                  <span>POS Transaction Report (Optional)</span>
+                  <input
+                    type="file"
+                    accept=".pdf,.jpg,.png"
+                    className="onboarding-form__upload-input"
+                    aria-label="Upload POS Transaction Report"
                   />
                 </label>
               </div>
