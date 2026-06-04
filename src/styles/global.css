@@ -150,12 +150,7 @@ input, textarea, select {
   color: var(--color-text);
 }
 
-/* ---- Scrollbar (Hidden) ---- */
-::-webkit-scrollbar {
-  display: none;
-  width: 0;
-  background: transparent;
-}
+/* Scrollbar intentionally left visible for accessibility */
 
 /* ---- Responsive Typography ---- */
 @media (max-width: 768px) {

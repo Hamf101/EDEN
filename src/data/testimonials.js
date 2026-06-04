@@ -7,6 +7,15 @@ export const testimonials = [
     id: 1,
     category: 'business-funding',
     quote:
+      'Working with Eden Prosperity was transformative. Their genuine mission to level the playing field equipped me with the foundational knowledge to build generational wealth and confidently pursue financial freedom.',
+    name: 'Kim B.',
+    role: 'Entrepreneur',
+    rating: 5,
+  },
+  {
+    id: 9,
+    category: 'business-funding',
+    quote:
       'Eden Prosperity completely changed my perspective on business funding. I went from not knowing where to start to having a clear capital readiness plan.',
     name: 'Marcus T.',
     role: 'Restaurant Owner',

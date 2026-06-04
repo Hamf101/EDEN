@@ -21,11 +21,12 @@ export default function Testimonials() {
   const [activeTab, setActiveTab] = useState('all');
 
   const featured = testimonials[0];
+  const gridTestimonials = testimonials.slice(1);
 
   const filtered =
     activeTab === 'all'
-      ? testimonials
-      : testimonials.filter((t) => t.category === activeTab);
+      ? gridTestimonials
+      : gridTestimonials.filter((t) => t.category === activeTab);
 
   return (
     <div className="page page--testimonials">
