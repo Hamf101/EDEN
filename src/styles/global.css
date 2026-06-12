@@ -183,7 +183,7 @@ input, textarea, select {
 
 /* ---- Overflow containment for main content ---- */
 main {
-  overflow-x: hidden;
+  overflow-x: clip;
   width: 100%;
 }
 
