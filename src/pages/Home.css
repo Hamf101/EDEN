@@ -341,10 +341,57 @@
 
 .home-programs {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--space-6);
-  max-width: 1060px;
+  max-width: 1200px;
   margin: 0 auto;
+}
+
+.home-requirements {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  max-width: 900px;
+  margin: 0 auto var(--space-16) auto;
+}
+
+.home-requirements__box {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(224, 198, 106, 0.2);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+}
+
+.home-requirements__box h3 {
+  color: var(--color-gold);
+  margin-bottom: var(--space-4);
+  font-size: 1.25rem;
+  font-family: var(--font-family-heading);
+}
+
+.home-requirements__box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+}
+
+.home-requirements__box li {
+  position: relative;
+  padding-left: var(--space-5);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.05rem;
+}
+
+.home-requirements__box li::before {
+  content: '•';
+  color: var(--color-gold);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: bold;
 }
 
 .home-program-card {
@@ -395,7 +442,7 @@
 .home-mission {
   position: relative;
   isolation: isolate;
-  overflow: hidden;
+  overflow: visible;
   padding: var(--space-6) 0 0;
   background:
     radial-gradient(circle at 1% 48%, rgba(224, 198, 106, 0.09), transparent 18rem),
@@ -403,7 +450,7 @@
   border-bottom: 1px solid var(--color-border-strong);
 }
 
-.home-mission::after {
+.home-mission__inner::after {
   content: '';
   position: absolute;
   right: -2.5rem;
@@ -428,7 +475,6 @@
   gap: 0;
   min-height: 300px;
   padding: 0;
-  overflow: hidden;
   background:
     linear-gradient(90deg, rgba(6, 26, 15, 0.7), rgba(2, 8, 5, 0.88)),
     var(--color-dark);
@@ -570,9 +616,23 @@
     max-width: 100%;
   }
 
-  .home-stats__inner,
-  .home-programs {
+  .home-stats__inner {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  .home-programs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .home-programs > *:nth-child(3) {
+    grid-column: 1 / -1;
+    max-width: calc(50% - var(--space-6) / 2);
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .home-requirements__box ul {
+    grid-template-columns: 1fr;
   }
 
   .home-stat {
@@ -655,6 +715,15 @@
 
   .home-program-card__top {
     grid-template-columns: 1fr;
+  }
+
+  .home-programs {
+    grid-template-columns: 1fr;
+  }
+
+  .home-programs > *:nth-child(3) {
+    grid-column: auto;
+    max-width: 100%;
   }
 }
 

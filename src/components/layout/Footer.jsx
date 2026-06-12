@@ -35,8 +35,8 @@ const quickLinks = [
 
 const serviceLinks = [
   { to: '/courses', label: 'Entrepreneur Programs' },
-  { to: '/onboarding/business', label: 'Business Intake' },
-  { to: '/onboarding/credit', label: 'Credit Consultation Intake' },
+  { to: '/onboarding/business', label: 'Business Application' },
+  { to: '/onboarding/credit', label: 'Credit Assessment' },
   { to: '/contact', label: 'Schedule A Call' },
 ];
 
@@ -76,7 +76,7 @@ export default function Footer() {
             >
               <InstagramIcon size={18} />
             </a>
-            <a href="mailto:Eden@ProsperityGroupLLC.net" aria-label="Email">
+            <a href="mailto:services@edenprosperitygroup.com" aria-label="Email">
               <Mail size={18} />
             </a>
           </div>

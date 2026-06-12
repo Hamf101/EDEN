@@ -62,7 +62,7 @@ export default function BusinessFunding() {
               capital strategy.
             </p>
             <Button variant="primary" size="lg" href="/onboarding/business">
-              Start Your Intake <ArrowRight size={18} />
+              Start Application <ArrowRight size={18} />
             </Button>
           </div>
 
@@ -167,7 +167,7 @@ export default function BusinessFunding() {
 
         <div className="funding-qualifications__cta">
           <Button variant="primary" size="lg" href="/onboarding/business">
-            Start Your Intake <ArrowRight size={18} />
+            Apply For Funding <ArrowRight size={18} />
           </Button>
         </div>
       </SectionWrapper>

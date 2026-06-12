@@ -1,6 +1,6 @@
 # Eden Prosperity Group LLC
 
-Premium website for Eden Prosperity Group LLC, a business consulting and credit consulting brand focused on capital readiness, business funding preparation, credit strategy, education, and client intake.
+Premium website for Eden Prosperity Group LLC, a business consulting and credit consulting brand focused on capital readiness, business funding preparation, credit strategy, education, and client onboarding.
 
 The app is a React + Vite single page application with client-side routing, branded landing content, service pages, testimonials, contact flow, and onboarding forms for business funding and credit consulting prospects.
 
@@ -38,8 +38,8 @@ npm run lint
 - `/courses` - Programs and education offers for business and credit readiness.
 - `/testimonials` - Client success stories and proof points.
 - `/contact` - Contact details and inquiry form.
-- `/onboarding/business` - Capital readiness onboarding and intake form.
-- `/onboarding/credit` - Credit consultation intake form.
+- `/onboarding/business` - Capital readiness onboarding and application form.
+- `/onboarding/credit` - Credit consultation assessment form.
 
 ## Asset And Design Notes
 
