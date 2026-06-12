@@ -15,7 +15,6 @@ const navLinks = [
   { to: '/credit-consulting', label: 'Credit Consulting' },
   { to: '/courses', label: 'Programs' },
   { to: '/testimonials', label: 'Testimonials' },
-  { to: '/contact', label: 'Contact' },
 ];
 
 export default function Navbar() {
@@ -23,8 +22,15 @@ export default function Navbar() {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 40);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 40);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -65,10 +71,6 @@ export default function Navbar() {
               </NavLink>
             ))}
           </nav>
-
-          <Link to="/onboarding/business" className="navbar__cta">
-            Apply Now
-          </Link>
 
           {/* Mobile Hamburger */}
           <button

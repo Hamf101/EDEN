@@ -1,5 +1,5 @@
 import Button from './Button';
-import PackageIcon from './PackageIcon';
+import crownIcon from '../../assets/crown-icon.png';
 import './CourseCard.css';
 
 /**
@@ -25,6 +25,7 @@ export default function CourseCard({
   image,
   highlights = [],
   onPurchase,
+  link,
 }) {
   /** Maps tier ID to a human label */
   const tierLabels = {
@@ -47,7 +48,17 @@ export default function CourseCard({
       )}
       <div className="course-card__content">
         <div className="course-card__program-icon">
-          <PackageIcon size={42} />
+          <img 
+            src={crownIcon} 
+            alt="Crown" 
+            style={{ 
+              width: '100%', 
+              height: '100%', 
+              objectFit: 'cover',
+              borderRadius: '50%',
+              transform: 'scale(1.85)'
+            }} 
+          />
         </div>
         <h3 className="course-card__title">{title}</h3>
         <p className="course-card__description">{description}</p>
@@ -68,7 +79,8 @@ export default function CourseCard({
           <Button
             variant="primary"
             size="sm"
-            onClick={onPurchase}
+            href={link}
+            onClick={!link ? onPurchase : undefined}
           >
             Enroll Now
           </Button>

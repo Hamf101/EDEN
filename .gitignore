@@ -11,6 +11,11 @@ node_modules
 dist
 dist-ssr
 *.local
+
+# Environment secrets — never commit these
+.env
+.env.local
+server/.env
 /.agent
 
 # Editor directories and files

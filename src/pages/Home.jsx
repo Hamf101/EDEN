@@ -1,5 +1,7 @@
+import { motion } from 'framer-motion';
+import CourseCard from '../components/ui/CourseCard';
+import { courses } from '../data/courses';
 import {
-  ArrowRight,
   Banknote,
   Calendar,
   Coins,
@@ -19,6 +21,21 @@ import ent2 from '../assets/entrepreneur_2_1780505679553.png';
 import ent3 from '../assets/entrepreneur_3_1780505690502.png';
 import ent4 from '../assets/entrepreneur_4_1780505702152.png';
 import './Home.css';
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.12
+    }
+  }
+};
+
+const itemVariant = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { duration: 0.4, ease: 'easeOut' } }
+};
 
 const STATS = [
   { icon: <Coins size={40} strokeWidth={1} />, value: '$50M+', label: 'Funding Solutions Available' },
@@ -64,6 +81,13 @@ const SERVICES = [
  * Premium homepage for Eden Prosperity Group LLC.
  */
 export default function Home() {
+  const scrollToServices = () => {
+    const servicesSection = document.getElementById('services');
+    if (servicesSection) {
+      servicesSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="page home-page">
       <section className="home-hero" id="home">
@@ -82,10 +106,7 @@ export default function Home() {
               wealth through business ownership.
             </p>
             <div className="home-hero__actions">
-              <Button variant="primary" size="lg" href="/onboarding/business">
-                Get Started <ArrowRight size={18} />
-              </Button>
-              <Button variant="secondary" size="lg" href="/business-funding">
+              <Button variant="primary" size="lg" onClick={scrollToServices}>
                 View Services
               </Button>
             </div>
@@ -93,12 +114,18 @@ export default function Home() {
             <div className="home-hero__trust">
               <p className="home-kicker">Trusted By Entrepreneurs Nationwide</p>
               <div className="home-hero__trust-stars">
-                 <div className="home-hero__trust-faces">
-                <img src={ent1} alt="Client 1" />
-                <img src={ent2} alt="Client 2" />
-                <img src={ent3} alt="Client 3" />
-                <img src={ent4} alt="Client 4" />
-              </div>
+              <motion.div 
+                className="home-hero__trust-faces"
+                variants={staggerContainer}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+              >
+                <motion.img variants={itemVariant} src={ent1} alt="Client 1" />
+                <motion.img variants={itemVariant} src={ent2} alt="Client 2" />
+                <motion.img variants={itemVariant} src={ent3} alt="Client 3" />
+                <motion.img variants={itemVariant} src={ent4} alt="Client 4" />
+              </motion.div>
                  <div className="home-hero__trust-rating">
                     <span>★★★★★</span>
                     <span>4.9 (500+ Reviews)</span>
@@ -110,15 +137,21 @@ export default function Home() {
       </section>
 
       <section className="home-stats" aria-label="Eden Prosperity proof points">
-        <div className="home-stats__inner container">
+        <motion.div 
+          className="home-stats__inner container"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.4 }}
+        >
           {STATS.map((stat) => (
-            <div className="home-stat" key={stat.label}>
+            <motion.div variants={itemVariant} className="home-stat" key={stat.label}>
               <div className="home-stat__icon">{stat.icon}</div>
               <strong>{stat.value}</strong>
               <span>{stat.label}</span>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </section>
 
       <section className="home-section home-section--services" id="services">
@@ -127,15 +160,60 @@ export default function Home() {
             <p className="home-kicker">What We Do</p>
             <h2>Complete Solutions For Your Business Growth</h2>
           </div>
-          <div className="home-services">
+          <motion.div 
+            className="home-programs" 
+            style={{ marginBottom: 'var(--space-16)' }}
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.1 }}
+          >
+            {courses.map((course) => (
+              <motion.div variants={itemVariant} key={course.id}>
+                <CourseCard {...course} />
+              </motion.div>
+            ))}
+          </motion.div>
+
+          <motion.div 
+            className="home-requirements"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.1 }}
+          >
+            <motion.div variants={itemVariant} className="home-requirements__box">
+              <h3>Consultation Requirements</h3>
+              <ul>
+                <li>Full Name</li>
+                <li>Phone Number & Email Address</li>
+                <li>Current Address</li>
+                <li>Picture of ID</li>
+                <li>Social Security Number</li>
+                <li>Experian & Equifax Logins</li>
+                <li>Proof of Business Ownership</li>
+                <li>3 Months Business Bank Statements</li>
+                <li>Latest Business Tax Return (Optional)</li>
+                <li>POS Transaction Report (Optional)</li>
+              </ul>
+            </motion.div>
+          </motion.div>
+
+          <motion.div 
+            className="home-services"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.1 }}
+          >
             {SERVICES.map((service) => (
-              <article className="home-service-card" key={service.title}>
+              <motion.article variants={itemVariant} className="home-service-card" key={service.title}>
                 <div className="home-service-card__icon">{service.icon}</div>
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
-              </article>
+              </motion.article>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 

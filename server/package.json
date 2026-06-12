@@ -1,0 +1,21 @@
+{
+  "name": "eden-server",
+  "version": "1.0.0",
+  "description": "Eden Prosperity Group form submission API server",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "crypto-js": "^4.2.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^8.5.2",
+    "file-type": "^16.5.4",
+    "multer": "^2.1.1",
+    "nodemailer": "^8.0.11"
+  }
+}

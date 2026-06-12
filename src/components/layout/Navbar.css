@@ -1,7 +1,7 @@
 .navbar {
   position: sticky;
   top: 0;
-  height: var(--nav-height);
+  height: 88px;
   min-width: 1180px;
   z-index: var(--z-sticky);
   background-color: rgba(var(--color-dark-rgb), 1);
@@ -22,9 +22,9 @@
 .navbar__inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   height: 100%;
-  gap: var(--space-4);
+  gap: var(--space-8);
 }
 
 .navbar__logo {
@@ -33,7 +33,7 @@
   gap: var(--space-2);
   color: var(--color-text);
   font-family: var(--font-family-accent);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
   text-decoration: none;
   text-transform: uppercase;
@@ -62,14 +62,14 @@
 .navbar__nav {
   display: flex;
   align-items: center;
-  gap: var(--space-4);
+  gap: var(--space-8);
 }
 
 .navbar__link {
   color: var(--color-text);
-  font-size: 0.82rem;
+  font-size: 1.2rem;
   font-weight: var(--font-weight-bold);
-  letter-spacing: var(--letter-spacing-wide);
+  letter-spacing: 0.03em;
   text-decoration: none;
   text-transform: uppercase;
   white-space: nowrap;
@@ -85,13 +85,13 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 118px;
+  min-width: 140px;
   padding: var(--space-3) var(--space-5);
   color: var(--color-dark);
   background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold));
   border: 1px solid rgba(var(--color-gold-rgb), 0.72);
   border-radius: var(--radius-sm);
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-sm);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--letter-spacing-wide);
   text-decoration: none;
@@ -113,7 +113,7 @@
 
 .navbar__mobile {
   position: fixed;
-  inset: var(--nav-height) 0 0;
+  inset: 88px 0 0;
   z-index: var(--z-overlay);
   background-color: rgba(var(--color-dark-rgb), 0.98);
   backdrop-filter: blur(18px);

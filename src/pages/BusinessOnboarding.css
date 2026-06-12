@@ -213,6 +213,119 @@
   clip-path: inset(50%);
 }
 
+/* ---- File Previews ---- */
+.file-preview-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+  width: 100%;
+}
+
+.file-preview-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-dark-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  animation: filePreviewFadeIn 0.25s ease-out;
+}
+
+.file-preview-thumbnail {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  border: 1px solid var(--color-border);
+  background: var(--color-dark-elevated);
+}
+
+.file-preview-icon {
+  color: var(--color-gold);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(var(--color-primary-rgb), 0.1);
+  border-radius: var(--radius-sm);
+}
+
+.file-preview-info {
+  flex-grow: 1;
+  min-width: 0; /* Allows text overflow ellipsis to work */
+  display: flex;
+  flex-direction: column;
+}
+
+.file-preview-name {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.file-preview-size {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+.file-preview-status {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--font-size-xs);
+  color: var(--color-success);
+  font-weight: var(--font-weight-medium);
+  margin-right: var(--space-2);
+}
+
+.file-preview-remove {
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  padding: var(--space-1);
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.file-preview-remove:hover {
+  color: var(--color-error);
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
+.onboarding-form__upload-item--has-file {
+  border-color: var(--color-success);
+  color: var(--color-success);
+  background: rgba(74, 222, 128, 0.02);
+}
+
+.onboarding-form__upload-item--has-file:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+@keyframes filePreviewFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* ---- Responsive ---- */
 @media (max-width: 768px) {
   .onboarding-form__row {
@@ -227,4 +340,58 @@
   .onboarding-form__upload-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* ---- Success State ---- */
+.success-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-12) var(--space-6);
+  background: var(--color-dark-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+  animation: filePreviewFadeIn 0.4s ease-out;
+}
+
+.success-state__icon-wrapper {
+  color: var(--color-gold);
+  margin-bottom: var(--space-5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(245, 209, 48, 0.1); /* gold with opacity */
+}
+
+.success-state__title {
+  font-family: var(--font-family-heading);
+  font-size: 2rem;
+  color: var(--color-gold);
+  margin-bottom: var(--space-3);
+}
+
+.success-state__message {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--space-8);
+}
+
+.success-state__loader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  background: var(--color-dark-elevated);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-full);
 }

@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
 import './SectionWrapper.css';
 
 /**
@@ -19,37 +19,18 @@ export default function SectionWrapper({
   className = '',
   children,
 }) {
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const el = sectionRef.current;
-    if (!el) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('section--visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
-    );
-
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section
-      ref={sectionRef}
+    <motion.section
       id={id}
       className={`section section--${bg} ${className}`}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, amount: 0.05 }}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
     >
       <div className={`section__inner ${narrow ? 'container--narrow' : ''}`}>
         {children}
       </div>
-    </section>
+    </motion.section>
   );
 }

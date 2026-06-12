@@ -1,6 +1,9 @@
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import SectionWrapper from '../components/ui/SectionWrapper';
 import Button from '../components/ui/Button';
-import { Mail, MapPin } from 'lucide-react';
+import { Mail, MapPin, Loader2, Check } from 'lucide-react';
+import { submitContactForm } from '../services/formApi';
 import './Contact.css';
 
 /**
@@ -31,6 +34,60 @@ function InstagramIcon({ size = 20 }) {
  * Unique warm hero with inline contact cards + centered form below.
  */
 export default function Contact() {
+  const navigate = useNavigate();
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
+
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    service: '',
+    message: '',
+  });
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    // Map input IDs to formData keys.
+    const keyMap = {
+      'contact-name': 'fullName',
+      'contact-email': 'email',
+      'contact-phone': 'phone',
+      'contact-service': 'service',
+      'contact-message': 'message',
+    };
+    const key = keyMap[id];
+    if (key) setFormData((prev) => ({ ...prev, [key]: value }));
+  };
+
+  /**
+   * Submits the contact form as JSON to the backend API,
+   * which sends an email with subject "Reaching Out - {name}".
+   *
+   * @param {React.FormEvent<HTMLFormElement>} e
+   */
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setError('');
+
+    try {
+      const result = await submitContactForm(formData);
+
+      if (!result.success) {
+        throw new Error(result.message || 'Submission failed.');
+      }
+
+      setIsSubmitted(true);
+      setTimeout(() => navigate('/'), 3000);
+    } catch (err) {
+      setError(err.message || 'Something went wrong. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <div className="page page--contact">
       {/* ---- UNIQUE HERO: Warm with inline contact cards ---- */}
@@ -44,13 +101,13 @@ export default function Contact() {
 
           <div className="contact-hero__cards">
             <a
-              href="mailto:Eden@ProsperityGroupLLC.net"
+              href="mailto:services@edenprosperitygroup.com"
               className="contact-hero__card"
             >
               <Mail size={24} className="contact-hero__card-icon" />
               <span className="contact-hero__card-label">Email</span>
               <span className="contact-hero__card-value">
-                Eden@ProsperityGroupLLC.net
+                services@edenprosperitygroup.com
               </span>
             </a>
 
@@ -82,7 +139,22 @@ export default function Contact() {
             <p>Fill out the form below and we&apos;ll get back to you shortly.</p>
           </div>
 
-          <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+          {isSubmitted ? (
+            <div className="success-state">
+              <div className="success-state__icon-wrapper">
+                <Check size={40} />
+              </div>
+              <h3 className="success-state__title">Message Sent!</h3>
+              <p className="success-state__message">
+                Thank you for reaching out. Your message has been sent successfully. We will get back to you as soon as possible.
+              </p>
+              <div className="success-state__loader">
+                <Loader2 size={16} className="success-state__spinner" style={{ animation: 'spin 1s linear infinite' }} />
+                <span>Redirecting to home page...</span>
+              </div>
+            </div>
+          ) : (
+          <form className="contact-form" onSubmit={handleSubmit}>
             <div className="contact-form__row">
               <div className="contact-form__group">
                 <label htmlFor="contact-name" className="contact-form__label">
@@ -93,6 +165,9 @@ export default function Contact() {
                   id="contact-name"
                   className="contact-form__input"
                   placeholder="Your full name"
+                  value={formData.fullName}
+                  onChange={handleChange}
+                  required
                 />
               </div>
 
@@ -105,6 +180,9 @@ export default function Contact() {
                   id="contact-email"
                   className="contact-form__input"
                   placeholder="you@example.com"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
                 />
               </div>
             </div>
@@ -119,6 +197,8 @@ export default function Contact() {
                   id="contact-phone"
                   className="contact-form__input"
                   placeholder="(555) 123-4567"
+                  value={formData.phone}
+                  onChange={handleChange}
                 />
               </div>
 
@@ -126,7 +206,12 @@ export default function Contact() {
                 <label htmlFor="contact-service" className="contact-form__label">
                   Service Interested In
                 </label>
-                <select id="contact-service" className="contact-form__input">
+                <select
+                  id="contact-service"
+                  className="contact-form__input"
+                  value={formData.service}
+                  onChange={handleChange}
+                >
                   <option value="">Select a service...</option>
                   <option value="business-funding">Business Funding</option>
                   <option value="credit-consulting">Credit Consulting</option>
@@ -145,13 +230,30 @@ export default function Contact() {
                 className="contact-form__input contact-form__textarea"
                 rows="5"
                 placeholder="Tell us about your goals..."
+                value={formData.message}
+                onChange={handleChange}
               />
             </div>
 
-            <Button variant="primary" size="lg" type="submit">
-              Send Message
+            {/* Error message */}
+            {error && (
+              <p style={{ color: '#ff6b6b', fontSize: '0.9rem', marginBottom: '0.5rem', textAlign: 'center' }}>
+                {error}
+              </p>
+            )}
+
+            <Button variant="primary" size="lg" type="submit" disabled={isLoading}>
+              {isLoading ? (
+                <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <Loader2 size={18} style={{ animation: 'spin 1s linear infinite' }} />
+                  Sending...
+                </span>
+              ) : (
+                'Send Message'
+              )}
             </Button>
           </form>
+          )}
         </div>
       </SectionWrapper>
     </div>
