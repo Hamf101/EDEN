@@ -1,5 +1,8 @@
 'use strict';
 
+const dns = require('dns');
+dns.setDefaultResultOrder('ipv4first');
+
 require('dotenv').config();
 
 const express = require('express');
